@@ -1,3 +1,38 @@
+import { VendureConfig } from '@vendure/core';
+
+export const config: VendureConfig = {
+    apiOptions: {
+        port: +(process.env.PORT || 3000),
+        // ...
+    },
+    // ...
+};
+import { VendureConfig } from '@vendure/core';
+
+export const config: VendureConfig = {
+    // ...
+    dbConnectionOptions: {
+        // ...
+        database: process.env.vendure-server,
+        host: process.env.dpg-d490ge63jp1c73cqu6h0-a,
+        port: +process.env.D5432,
+        username: process.env.postgres_sua7_user,
+        password: process.env.Rr6NsZwpJIf9g1tHbiEgAgTE4TqOttLI,
+    },
+};
+import { VendureConfig } from '@vendure/core';
+import { AssetServerPlugin } from '@vendure/asset-server-plugin';
+
+export const config: VendureConfig = {
+    // ...
+    plugins: [
+        AssetServerPlugin.init({
+            route: 'assets',
+            assetUploadDir: process.env.postgresql://postgres_sua7_user:Rr6NsZwpJIf9g1tHbiEgAgTE4TqOttLI@dpg-d490ge63jp1c73cqu6h0-a.frankfurt-postgres.render.com/postgres_sua7 || path.join(__dirname, '../static/assets'),
+        }),
+    ],
+    // ...
+};
 import { ApolloServerPlugin } from '@apollo/server';
 import { RenderPageOptions } from '@apollographql/graphql-playground-html';
 import { DynamicModule, Type } from '@nestjs/common';
