@@ -1,3 +1,8 @@
+import { VendureConfig } from '@vendure/core';
+import { TemuVendurePlugin } from './src/plugin'; // Poskrbite, da bo pot pravilna
+
+// Ostali imports, če jih imate
+// import { otherPlugin } from 'some-other-plugin';
 import { ApolloServerPlugin } from '@apollo/server';
 import { RenderPageOptions } from '@apollographql/graphql-playground-html';
 import { DynamicModule, Type } from '@nestjs/common';
@@ -1346,3 +1351,26 @@ type DeepPartialSimple<T> = {
 };
 
 export type PartialVendureConfig = DeepPartialSimple<VendureConfig>;
+export const config: VendureConfig = {
+    apiOptions: {
+        port: 3000,
+        adminApiPath: 'admin-api',
+        shopApiPath: 'shop-api',
+    },
+    dbConnectionOptions: {
+        type: 'sqlite',
+        database: 'vendure.db',
+        synchronize: true,
+    },
+    authOptions: {
+        tokenMethod: 'cookie',
+        cookieOptions: {
+            secret: 'your-cookie-secret', // Zamenjajte s svojim tajnim ključem
+        },
+    },
+    plugins: [
+        TemuVendurePlugin,
+        // tukaj dodajte druge plugin-e
+    ],
+    // Dodajte druge nastavitve, kot so middleware, logging, idr.
+};
