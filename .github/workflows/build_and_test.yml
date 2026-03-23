@@ -30,11 +30,11 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # Generate code
+  # Codegen
   codegen:
     uses: ./.github/workflows/codegen.yml
 
-  # Build core packages
+  # Build
   build:
     name: build
     runs-on: ubuntu-latest
@@ -66,7 +66,7 @@ jobs:
       - name: Unit tests
         run: npm run test
 
-  # Check if dashboard has changes
+  # Check dashboard changes
   dashboard-changes:
     name: check dashboard changes
     runs-on: ubuntu-latest
@@ -89,7 +89,7 @@ jobs:
           else
             echo "changed=false" >> "$GITHUB_OUTPUT"
 
-  # Dashboard e2e tests
+  # Dashboard e2e
   dashboard-e2e:
     name: dashboard e2e
     needs: dashboard-changes
@@ -119,7 +119,7 @@ jobs:
         run: npm run e2e:pw
         working-directory: packages/dashboard
 
-  # SonarQube scan
+  # SonarQube
   sonarqube:
     name: SonarQube
     if: ${{ github.event_name != 'pull_request' || !github.event.pull_request.head.repo.fork }}
@@ -136,33 +136,112 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
-  # e2e with SQLJS
-  e2e-sqljs:
-    name: e2e (sqljs)
+  # DRY e2e jobs
+  e2e:
+    name: e2e tests
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    services:
-      elastic:
-        image: docker.elastic.co/elasticsearch/elasticsearch:7.1.1
-        env:
-          discovery.type: single-node
-          bootstrap.memory_lock: true
-          ES_JAVA_OPTS: -Xms512m -Xmx512m
-          cluster.routing.allocation.disk.watermark.low: 500mb
-          cluster.routing.allocation.disk.watermark.high: 200mb
-          cluster.routing.allocation.disk.watermark.flood_stage: 100mb
-        ports: ["9200"]
-        options: >-
-          --health-cmd="curl --silent --fail localhost:9200/_cluster/health"
-          --health-interval=10s --health-timeout=5s --health-retries=3
-      redis:
-        image: redis:7.4.1
-        ports: ["6379"]
     strategy:
       fail-fast: false
       matrix:
+        db: [sqljs, mariadb, mysql, postgres]
         node: ${{ github.event_name == 'pull_request' && fromJSON('["22.x"]') || fromJSON('["20.x","22.x","24.x"]') }}
+    services:
+      sqljs:
+        elastic:
+          image: docker.elastic.co/elasticsearch/elasticsearch:7.1.1
+          env:
+            discovery.type: single-node
+            bootstrap.memory_lock: true
+            ES_JAVA_OPTS: -Xms512m -Xmx512m
+            cluster.routing.allocation.disk.watermark.low: 500mb
+            cluster.routing.allocation.disk.watermark.high: 200mb
+            cluster.routing.allocation.disk.watermark.flood_stage: 100mb
+          ports: ["9200"]
+          options: >-
+            --health-cmd="curl --silent --fail localhost:9200/_cluster/health"
+            --health-interval=10s --health-timeout=5s --health-retries=3
+        redis:
+          image: redis:7.4.1
+          ports: ["6379"]
+      mariadb:
+        mariadb:
+          image: mariadb:11.5
+          env:
+            MARIADB_ROOT_PASSWORD: password
+          ports: ["3306"]
+          options: >-
+            --health-cmd="mariadb-admin ping -h localhost -u vendure -ppassword"
+            --health-interval=10s --health-timeout=5s --health-retries=3
+        elastic:
+          image: docker.elastic.co/elasticsearch/elasticsearch:7.1.1
+          env:
+            discovery.type: single-node
+            bootstrap.memory_lock: true
+            ES_JAVA_OPTS: -Xms512m -Xmx512m
+            cluster.routing.allocation.disk.watermark.low: 500mb
+            cluster.routing.allocation.disk.watermark.high: 200mb
+            cluster.routing.allocation.disk.watermark.flood_stage: 100mb
+          ports: ["9200"]
+          options: >-
+            --health-cmd="curl --silent --fail localhost:9200/_cluster/health"
+            --health-interval=10s --health-timeout=5s --health-retries=3
+        redis:
+          image: redis:7.4.1
+          ports: ["6379"]
+      mysql:
+        mysql:
+          image: vendure/mysql-8-native-auth:latest
+          env:
+            MYSQL_ROOT_PASSWORD: password
+          ports: ["3306"]
+          options: >-
+            --health-cmd="mysqladmin ping --silent"
+            --health-interval=10s --health-timeout=20s --health-retries=10
+        elastic:
+          image: docker.elastic.co/elasticsearch/elasticsearch:7.1.1
+          env:
+            discovery.type: single-node
+            bootstrap.memory_lock: true
+            ES_JAVA_OPTS: -Xms512m -Xmx512m
+            cluster.routing.allocation.disk.watermark.low: 500mb
+            cluster.routing.allocation.disk.watermark.high: 200mb
+            cluster.routing.allocation.disk.watermark.flood_stage: 100mb
+          ports: ["9200"]
+          options: >-
+            --health-cmd="curl --silent --fail localhost:9200/_cluster/health"
+            --health-interval=10s --health-timeout=5s --health-retries=3
+        redis:
+          image: redis:7.4.1
+          ports: ["6379"]
+      postgres:
+        postgres:
+          image: postgres:16
+          env:
+            POSTGRES_USER: vendure
+            POSTGRES_PASSWORD: password
+          ports: ["5432"]
+          options: >-
+            --health-cmd=pg_isready
+            --health-interval=10s --health-timeout=5s
+            --health-retries=3
+        elastic:
+          image: docker.elastic.co/elasticsearch/elasticsearch:7.1.1
+          env:
+            discovery.type: single-node
+            bootstrap.memory_lock: true
+            ES_JAVA_OPTS: -Xms512m -Xmx512m
+            cluster.routing.allocation.disk.watermark.low: 500mb
+            cluster.routing.allocation.disk.watermark.high: 200mb
+            cluster.routing.allocation.disk.watermark.flood_stage: 100mb
+          ports: ["9200"]
+          options: >-
+            --health-cmd="curl --silent --fail localhost:9200/_cluster/health"
+            --health-interval=10s --health-timeout=5s --health-retries=3
+        redis:
+          image: redis:7.4.1
+          ports: ["6379"]
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
@@ -172,9 +251,10 @@ jobs:
         run: npx lerna run ci
       - name: e2e tests
         env:
-          E2E_ELASTIC_PORT: ${{ job.services.elastic.ports['9200'] }}
-          E2E_REDIS_PORT: ${{ job.services.redis.ports['6379'] }}
-          DB: sqljs
+          E2E_ELASTIC_PORT: ${{ job.services[matrix.db].elastic.ports['9200'] }}
+          E2E_REDIS_PORT: ${{ job.services[matrix.db].redis.ports['6379'] }}
+          E2E_MARIADB_PORT: ${{ matrix.db == 'mariadb' && job.services.mariadb.mariadb.ports['3306'] || '' }}
+          E2E_MYSQL_PORT: ${{ matrix.db == 'mysql' && job.services.mysql.mysql.ports['3306'] || '' }}
+          E2E_POSTGRES_PORT: ${{ matrix.db == 'postgres' && job.services.postgres.postgres.ports['5432'] || '' }}
+          DB: ${{ matrix.db }}
         run: npm run e2e
-
-  # e2e-mariadb, e2e-mysql, e2e-postgres jobs are similar; repeat with matrix.node as above
