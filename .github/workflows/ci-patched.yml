@@ -16,11 +16,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Print event info
         run: |
           echo "GITHUB_EVENT_NAME=$GITHUB_EVENT_NAME"
           echo "GITHUB_REF=$GITHUB_REF"
           echo "GITHUB_SHA=$GITHUB_SHA"
-      - name: Simple test
+
+      - name: Skip create-github-app-token (no app configured)
         run: |
-          echo "This job ran successfully."
+          echo "No GitHub App configured; using GITHUB_TOKEN for repo operations"
