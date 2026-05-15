@@ -5,6 +5,7 @@ on:
     branches: [ "master", "main" ]
   pull_request:
     branches: [ "master", "main" ]
+  workflow_dispatch: {}
 
 permissions:
   contents: read
@@ -22,12 +23,10 @@ jobs:
         os: [windows-latest, ubuntu-latest, macos-latest]
         node: [20.x]
     env:
-      # Per-job Verdaccio port to avoid collisions when matrix runs in parallel
       VERDACCIO_PORT: 4874
-      # Opt into Node.js 24 for JavaScript actions to silence deprecation warnings
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-      # Use runner temp dir for cross-platform screenshots
-      SCREENSHOT_DIR: ${{ runner.temp }}
+      # Use a workspace-based temp directory (valid expression)
+      WORKSPACE_TMP: ${{ github.workspace }}/tmp
 
     steps:
       - name: Checkout repository
@@ -37,6 +36,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 24.x
+
+      - name: Ensure WORKSPACE_TMP exists
+        run: |
+          mkdir -p "${{ env.WORKSPACE_TMP }}"
 
       - name: Ensure Verdaccio port is free (Windows)
         if: runner.os == 'Windows'
@@ -69,7 +72,8 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: verdaccio-storage
-          path: ${{ runner.temp }}/verdaccio-download
+          # use workspace tmp path (no runner.temp expression)
+          path: ${{ env.WORKSPACE_TMP }}/verdaccio-download
 
       - name: Install Verdaccio and helpers
         shell: bash
@@ -82,7 +86,7 @@ jobs:
           mkdir -p $HOME/.config/verdaccio
           cp ./.github/workflows/verdaccio/config.yaml $HOME/.config/verdaccio/config.yaml || true
           sed -i.bak "s/4873/${VERDACCIO_PORT}/g" $HOME/.config/verdaccio/config.yaml || true
-          tar -xzf ${{ runner.temp }}/verdaccio-download/verdaccio-storage.tar.gz -C $HOME/.config/verdaccio || true
+          tar -xzf ${{ env.WORKSPACE_TMP }}/verdaccio-download/verdaccio-storage.tar.gz -C $HOME/.config/verdaccio || true
 
       - name: Start Verdaccio (background) and wait for ready
         shell: bash
@@ -132,8 +136,9 @@ jobs:
 
       - name: Run tests
         shell: bash
+        env:
+          DASHBOARD_SCREENSHOT_DIR: ${{ env.WORKSPACE_TMP }}
         run: |
-          export DASHBOARD_SCREENSHOT_DIR="${SCREENSHOT_DIR}"
           # Replace the following with your actual test command
           npm test -- --output=${DASHBOARD_SCREENSHOT_DIR} || true
 
@@ -141,7 +146,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: dashboard-test-screenshots-${{ matrix.os }}-${{ matrix.node }}
-          path: ${{ env.SCREENSHOT_DIR }}/dashboard-test-*.png
+          path: ${{ env.WORKSPACE_TMP }}/dashboard-test-*.png
           if-no-files-found: warn
 
       - name: Post job cleanup
