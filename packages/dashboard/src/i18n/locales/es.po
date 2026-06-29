@@ -94,7 +94,7 @@ msgstr "Usando estrategia de autenticación externa: {strategy}"
 msgid "Select a reason..."
 msgstr "Selecciona un motivo..."
 
-#: src/lib/components/shared/rich-text-editor/responsive-toolbar.tsx:79
+#: src/lib/components/shared/rich-text-editor/responsive-toolbar.tsx:100
 msgid "Heading 5"
 msgstr "Encabezado 5"
 
@@ -104,7 +104,7 @@ msgstr "Encabezado 5"
 msgid "Failed to add payment"
 msgstr "Error al agregar pago"
 
-#: src/lib/framework/layout-engine/page-layout.tsx:718
+#: src/lib/framework/layout-engine/page-layout.tsx:746
 msgid "Updated"
 msgstr "Actualizado"
 
@@ -113,7 +113,7 @@ msgstr "Actualizado"
 msgid "Failed to update global settings"
 msgstr "Error al actualizar configuración global"
 
-#: src/app/routes/_authenticated/_orders/components/fulfill-order-dialog.tsx:77
+#: src/app/routes/_authenticated/_orders/components/fulfill-order-dialog.tsx:78
 msgid "Successfully fulfilled order"
 msgstr "Pedido cumplido exitosamente"
 
@@ -137,7 +137,7 @@ msgstr "Gestionar Idiomas"
 msgid "Duplicating... ({0}/{1})"
 msgstr "Duplicando... ({0}/{1})"
 
-#: src/lib/components/data-table/use-generated-columns.tsx:387
+#: src/lib/components/data-table/use-generated-columns.tsx:389
 msgid "Deleted successfully"
 msgstr "Eliminado exitosamente"
 
@@ -164,7 +164,7 @@ msgstr "Tipo"
 #. placeholder {0}: entityName.toLowerCase()
 #. placeholder {0}: group.name
 #: src/app/routes/_authenticated/_products/components/product-option-select.tsx:57
-#: src/lib/components/data-input/default-relation-input.tsx:618
+#: src/lib/components/data-input/default-relation-input.tsx:676
 msgid "Select {0}"
 msgstr "Seleccionar {0}"
 
@@ -198,7 +198,7 @@ msgstr "Cuando esto está habilitado, los precios ingresados en el catálogo de 
 #~ msgid "Create variants for your product"
 #~ msgstr "Crear variantes para su producto"
 
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:291
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:331
 msgid "Draft order completed"
 msgstr "Pedido borrador completado"
 
@@ -208,8 +208,8 @@ msgid "Auto refresh: {0}"
 msgstr "Actualización automática: {0}"
 
 #: src/app/routes/_authenticated/_system/components/cancel-jobs-bulk-action.tsx:34
-msgid "Successfully cancelled {fulfilled} job"
-msgstr ""
+#~ msgid "Successfully cancelled {fulfilled} job"
+#~ msgstr ""
 
 #: src/app/routes/_authenticated/_system/healthchecks.tsx:43
 #~ msgid "Health checks"
@@ -229,9 +229,13 @@ msgstr "Eliminado {deleted} {entityName}"
 msgid "Sellers"
 msgstr "Vendedores"
 
-#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:243
+#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:269
 msgid "Options"
 msgstr "Opciones"
+
+#: src/app/routes/_authenticated/_system/components/cancel-jobs-bulk-action.tsx:35
+msgid "{fulfilled, plural, one {Successfully cancelled {fulfilled} job} other {Successfully cancelled {fulfilled} jobs}}"
+msgstr "{fulfilled, plural, one {{fulfilled} tarea cancelada correctamente} other {{fulfilled} tareas canceladas correctamente}}"
 
 #: src/app/routes/_authenticated/_channels/channels_.$id.tsx:152
 msgid "Seller"
@@ -259,7 +263,7 @@ msgstr "Pruebe este método de envío simulando un pedido para ver si es elegibl
 msgid "Stock Locations"
 msgstr "Ubicaciones de stock"
 
-#: src/app/routes/_authenticated/_orders/components/fulfill-order-dialog.tsx:292
+#: src/app/routes/_authenticated/_orders/components/fulfill-order-dialog.tsx:293
 #: src/app/routes/_authenticated/_shipping-methods/shipping-methods_.$id.tsx:170
 msgid "Fulfillment handler"
 msgstr "Controlador de cumplimiento"
@@ -282,7 +286,7 @@ msgstr "Seleccionar roles"
 msgid "Successfully created role"
 msgstr "Rol creado exitosamente"
 
-#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:454
+#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:459
 msgid "Are you sure you want to delete this variant?"
 msgstr "¿Está seguro de que desea eliminar esta variante?"
 
@@ -298,7 +302,7 @@ msgstr "Error al crear el administrador"
 msgid "No"
 msgstr "No"
 
-#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:128
+#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:147
 msgid "Successfully updated product variant"
 msgstr "Variante de producto actualizada exitosamente"
 
@@ -320,7 +324,7 @@ msgstr "Escriba al menos 2 caracteres para buscar..."
 
 #: src/app/routes/_authenticated/_administrators/administrators_.$id.tsx:121
 #: src/app/routes/_authenticated/_customers/customers_.$id.tsx:182
-#: src/app/routes/_authenticated/_profile/profile.tsx:100
+#: src/app/routes/_authenticated/_profile/profile.tsx:108
 msgid "Last name"
 msgstr "Apellido"
 
@@ -345,8 +349,8 @@ msgstr "Ubicación de stock creada exitosamente"
 #: src/app/routes/_authenticated/_products/components/add-option-group-dialog.tsx:78
 #: src/app/routes/_authenticated/_products/components/add-option-group-dialog.tsx:120
 #: src/app/routes/_authenticated/_products/components/add-product-variant-dialog.tsx:166
-#: src/app/routes/_authenticated/_products/components/generate-variants-panel.tsx:180
-#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:112
+#: src/app/routes/_authenticated/_products/components/generate-variants-panel.tsx:185
+#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:113
 #: src/app/routes/_authenticated/_products/products_.$id.tsx:204
 msgid "Unknown error"
 msgstr "Error desconocido"
@@ -447,11 +451,9 @@ msgstr "Dirección eliminada exitosamente"
 msgid "Tax rate"
 msgstr "Tasa de impuestos"
 
-#. placeholder {0}: import { DataTableBulkActionItem } from '@/vdb/components/data-table/data-table-bulk-action-item.js'; import { BulkActionComponent } from '@/vdb/framework/extension-api/types/data-table.js'; import { api } from '@/vdb/graphql/api.js'; import { usePaginatedList } from '@/vdb/hooks/use-paginated-list.js'; import { plural } from '@lingui/core/macro'; import { Plural, useLingui } from '@lingui/react/macro'; import { useMutation } from '@tanstack/react-query'; import { Ban } from 'lucide-react'; import { toast } from 'sonner'; import { cancelJobDocument } from '../job-queue.graphql.js'; export const CancelJobsBulkAction: BulkActionComponent<any> = ({ selection, table }) => { const { refetchPaginatedList } = usePaginatedList(); const { t } = useLingui(); const cancellableJobs = selection.filter(job => job.state === 'RUNNING' || job.state === 'PENDING'); const cancellableCount = cancellableJobs.length; const { mutate, isPending } = useMutation({ mutationFn: async () => { const results = await Promise.allSettled( cancellableJobs.map(job => api.mutate(cancelJobDocument, { jobId: job.id })), ); const fulfilled = results.filter(r => r.status === 'fulfilled').length; const rejected = results.filter(r => r.status === 'rejected').length; return { fulfilled, rejected }; }, onSuccess: ({ fulfilled, rejected }) => { if (fulfilled > 0) { toast.success( plural(fulfilled, { one: t`Successfully cancelled ${fulfilled} job`, other: t`Successfully cancelled ${fulfilled} jobs`, }), ); } if (rejected > 0) { toast.error( plural(rejected, { one: t`Failed to cancel ${rejected} job`, other: t`Failed to cancel ${rejected} jobs`, }), ); } refetchPaginatedList(); table.resetRowSelection(); }, }); if (cancellableCount === 0) { return null; } return ( <DataTableBulkActionItem requiresPermission={['DeleteSettings', 'DeleteSystem']} onClick={() => mutate()} disabled={isPending} label={ <Plural value={cancellableCount} one={`Cancel ${cancellableCount} job`} other={`Cancel ${cancellableCount} jobs`} /> } confirmationText={ <Plural value={cancellableCount} one={`Are you sure you want to cancel ${cancellableCount} job? This action cannot be undone.`} other={`Are you sure you want to cancel ${cancellableCount} jobs? This action cannot be undone.`} /> } icon={Ban} className="text-destructive" /> ); }; 
-#. placeholder {1}: import { DataTableBulkActionItem } from '@/vdb/components/data-table/data-table-bulk-action-item.js'; import { BulkActionComponent } from '@/vdb/framework/extension-api/types/data-table.js'; import { api } from '@/vdb/graphql/api.js'; import { usePaginatedList } from '@/vdb/hooks/use-paginated-list.js'; import { plural } from '@lingui/core/macro'; import { Plural, useLingui } from '@lingui/react/macro'; import { useMutation } from '@tanstack/react-query'; import { Ban } from 'lucide-react'; import { toast } from 'sonner'; import { cancelJobDocument } from '../job-queue.graphql.js'; export const CancelJobsBulkAction: BulkActionComponent<any> = ({ selection, table }) => { const { refetchPaginatedList } = usePaginatedList(); const { t } = useLingui(); const cancellableJobs = selection.filter(job => job.state === 'RUNNING' || job.state === 'PENDING'); const cancellableCount = cancellableJobs.length; const { mutate, isPending } = useMutation({ mutationFn: async () => { const results = await Promise.allSettled( cancellableJobs.map(job => api.mutate(cancelJobDocument, { jobId: job.id })), ); const fulfilled = results.filter(r => r.status === 'fulfilled').length; const rejected = results.filter(r => r.status === 'rejected').length; return { fulfilled, rejected }; }, onSuccess: ({ fulfilled, rejected }) => { if (fulfilled > 0) { toast.success( plural(fulfilled, { one: t`Successfully cancelled ${fulfilled} job`, other: t`Successfully cancelled ${fulfilled} jobs`, }), ); } if (rejected > 0) { toast.error( plural(rejected, { one: t`Failed to cancel ${rejected} job`, other: t`Failed to cancel ${rejected} jobs`, }), ); } refetchPaginatedList(); table.resetRowSelection(); }, }); if (cancellableCount === 0) { return null; } return ( <DataTableBulkActionItem requiresPermission={['DeleteSettings', 'DeleteSystem']} onClick={() => mutate()} disabled={isPending} label={ <Plural value={cancellableCount} one={`Cancel ${cancellableCount} job`} other={`Cancel ${cancellableCount} jobs`} /> } confirmationText={ <Plural value={cancellableCount} one={`Are you sure you want to cancel ${cancellableCount} job? This action cannot be undone.`} other={`Are you sure you want to cancel ${cancellableCount} jobs? This action cannot be undone.`} /> } icon={Ban} className="text-destructive" /> ); }; 
 #: src/app/routes/_authenticated/_system/components/cancel-jobs-bulk-action.tsx:33
-msgid "{fulfilled, plural, one {{0}} other {{1}}}"
-msgstr ""
+#~ msgid "{fulfilled, plural, one {{0}} other {{1}}}"
+#~ msgstr ""
 
 #: src/app/routes/_authenticated/_orders/components/draft-order-status.tsx:34
 msgid "Order draft isn't ready to be completed"
@@ -486,7 +488,7 @@ msgstr "privado"
 msgid "Successfully created product option"
 msgstr "Opción de producto creada correctamente"
 
-#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:475
+#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:501
 msgid "Parent product"
 msgstr "Producto principal"
 
@@ -539,11 +541,11 @@ msgstr "Gestionar vistas guardadas globales que son visibles para todos los usua
 msgid "Search payment methods..."
 msgstr "Buscar métodos de pago..."
 
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:217
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:257
 msgid "Shipping address unset for order"
 msgstr "Dirección de envío removida del pedido"
 
-#: src/app/routes/_authenticated/_products/components/generate-variants-panel.tsx:332
+#: src/app/routes/_authenticated/_products/components/generate-variants-panel.tsx:432
 msgid "Create {enabledCount} variants"
 msgstr "Crear {enabledCount} variantes"
 
@@ -562,7 +564,7 @@ msgstr "Error al cargar historial del cliente: {0}"
 msgid "Successfully removed {selectionLength} {entityType} from channel"
 msgstr "Removido exitosamente {selectionLength} {entityType} del canal"
 
-#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:158
+#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:159
 msgid "Add option value"
 msgstr "Agregar valor de opción"
 
@@ -571,7 +573,7 @@ msgstr "Agregar valor de opción"
 msgid "Global Settings"
 msgstr "Configuración global"
 
-#: src/lib/components/data-table/human-readable-operator.tsx:30
+#: src/lib/components/data-table/human-readable-operator.tsx:32
 msgid "is after"
 msgstr "es después"
 
@@ -580,7 +582,7 @@ msgid "Successfully updated product option"
 msgstr "Opción de producto actualizada correctamente"
 
 #: src/app/routes/_authenticated/_product-variants/components/product-variant-bulk-actions.tsx:95
-#: src/app/routes/_authenticated/_products/components/assign-facet-values-dialog.tsx:156
+#: src/app/routes/_authenticated/_products/components/assign-facet-values-dialog.tsx:159
 #: src/app/routes/_authenticated/_products/components/product-bulk-actions.tsx:89
 msgid "Edit facet values"
 msgstr "Editar valores de faceta"
@@ -663,7 +665,7 @@ msgstr "Por favor agregue productos y complete la dirección de envío para ejec
 msgid "Toggle header row"
 msgstr "Alternar fila de encabezado"
 
-#: src/app/routes/_authenticated/_orders/components/customer-address-selector.tsx:65
+#: src/app/routes/_authenticated/_orders/components/customer-address-selector.tsx:52
 msgid "Select address"
 msgstr "Seleccionar dirección"
 
@@ -685,12 +687,12 @@ msgid "Metadata"
 msgstr "Metadatos"
 
 #. placeholder {0}: error.message
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:251
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:291
 msgid "Failed to set shipping method for order: {0}"
 msgstr ""
 
 #: src/app/routes/_authenticated/_option-groups/components/option-group-products-block.tsx:48
-#: src/lib/components/data-table/data-table.tsx:367
+#: src/lib/components/data-table/data-table.tsx:378
 msgid "Filter..."
 msgstr "Filtrar..."
 
@@ -715,8 +717,8 @@ msgstr "Fecha corta"
 msgid "Available currencies"
 msgstr "Monedas disponibles"
 
-#. placeholder {0}: selectedItems.length
-#: src/lib/components/data-input/product-multi-selector-input.tsx:373
+#. placeholder {0}: selectedIds.size
+#: src/lib/components/data-input/product-multi-selector-input.tsx:473
 msgid "Select {0} Items"
 msgstr "Seleccionar {0} elementos"
 
@@ -740,7 +742,7 @@ msgstr "Confirmar navegación"
 msgid "Link target"
 msgstr "Destino del enlace"
 
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:365
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:405
 msgid "Complete draft"
 msgstr "Completar borrador"
 
@@ -750,14 +752,14 @@ msgstr "Completar borrador"
 #: src/app/routes/_authenticated/_collections/collections_.$id.tsx:169
 #: src/app/routes/_authenticated/_countries/countries_.$id.tsx:104
 #: src/app/routes/_authenticated/_customer-groups/customer-groups_.$id.tsx:103
-#: src/app/routes/_authenticated/_customers/customers.tsx:74
+#: src/app/routes/_authenticated/_customers/customers.tsx:70
 #: src/app/routes/_authenticated/_facets/facets_.$facetId.values_.$id.tsx:131
 #: src/app/routes/_authenticated/_facets/facets_.$id.tsx:120
 #: src/app/routes/_authenticated/_option-groups/option-groups_.$groupId.options_.$id.tsx:202
 #: src/app/routes/_authenticated/_option-groups/option-groups_.$id.tsx:170
 #: src/app/routes/_authenticated/_payment-methods/payment-methods_.$id.tsx:158
 #: src/app/routes/_authenticated/_products/components/add-product-variant-dialog.tsx:286
-#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:348
+#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:353
 #: src/app/routes/_authenticated/_promotions/promotions_.$id.tsx:165
 #: src/app/routes/_authenticated/_sellers/sellers_.$id.tsx:89
 #: src/app/routes/_authenticated/_shipping-methods/shipping-methods_.$id.tsx:148
@@ -769,9 +771,9 @@ msgstr "Completar borrador"
 msgid "Name"
 msgstr "Nombre"
 
-#: src/app/routes/_authenticated/_orders/components/fulfill-order-dialog.tsx:80
-#: src/app/routes/_authenticated/_orders/components/fulfill-order-dialog.tsx:86
-#: src/app/routes/_authenticated/_orders/components/fulfill-order-dialog.tsx:188
+#: src/app/routes/_authenticated/_orders/components/fulfill-order-dialog.tsx:81
+#: src/app/routes/_authenticated/_orders/components/fulfill-order-dialog.tsx:87
+#: src/app/routes/_authenticated/_orders/components/fulfill-order-dialog.tsx:189
 msgid "Failed to fulfill order"
 msgstr "Error al cumplir pedido"
 
@@ -791,7 +793,7 @@ msgstr "Ingrese el ID de transacción para esta liquidación de reembolso"
 msgid "Your API Key"
 msgstr "Su API Key"
 
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:349
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:389
 msgid "Are you sure you want to delete this draft order?"
 msgstr "¿Está seguro de que desea eliminar este borrador de pedido?"
 
@@ -830,7 +832,7 @@ msgstr "Agregar columna después"
 #: src/app/routes/_authenticated/_promotions/promotions_.$id.tsx:241
 #: src/app/routes/_authenticated/_system/scheduled-tasks.tsx:193
 #: src/lib/components/data-table/data-table-bulk-actions.tsx:82
-#: src/lib/components/data-table/use-generated-columns.tsx:251
+#: src/lib/components/data-table/use-generated-columns.tsx:253
 msgid "Actions"
 msgstr "Acciones"
 
@@ -842,7 +844,7 @@ msgstr "Descuentos"
 msgid "Enter refund note"
 msgstr "Ingrese nota de reembolso"
 
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:151
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:153
 msgid "Order line removed"
 msgstr "Línea de pedido eliminada"
 
@@ -860,7 +862,7 @@ msgid "Confirm"
 msgstr "Confirmar"
 
 #. placeholder {0}: error.message
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:303
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:343
 msgid "Failed to complete draft order: {0}"
 msgstr ""
 
@@ -878,7 +880,7 @@ msgstr "Error al crear producto"
 
 #: src/app/routes/_authenticated/_orders/components/order-detail-shared.tsx:276
 #: src/app/routes/_authenticated/_orders/orders_.$id_.modify.tsx:233
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:457
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:497
 #: src/lib/components/shared/role-code-label.tsx:8
 msgid "Customer"
 msgstr "Cliente"
@@ -888,7 +890,7 @@ msgstr "Cliente"
 msgid "Error loading order history: {0}"
 msgstr "Error al cargar historial del pedido: {0}"
 
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:195
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:235
 msgid "Shipping address set for order"
 msgstr "Dirección de envío establecida para el pedido"
 
@@ -922,7 +924,7 @@ msgid "Refresh data"
 msgstr "Actualizar datos"
 
 #. placeholder {0}: entityIds.length
-#: src/app/routes/_authenticated/_products/components/assign-facet-values-dialog.tsx:159
+#: src/app/routes/_authenticated/_products/components/assign-facet-values-dialog.tsx:162
 msgid "Add or remove facet values for {0} {entityType}"
 msgstr "Agregar o quitar valores de faceta para {0} {entityType}"
 
@@ -934,7 +936,7 @@ msgstr "Estos son los valores de la faceta <0>{facetName}</0>."
 msgid "Successfully added payment to order"
 msgstr "Pago agregado al pedido exitosamente"
 
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:206
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:246
 msgid "Billing address set for order"
 msgstr "Dirección de facturación establecida para el pedido"
 
@@ -943,14 +945,14 @@ msgid "Failed to update zone"
 msgstr "Error al actualizar zona"
 
 #: src/app/routes/_authenticated/_administrators/administrators_.$id.tsx:133
-#: src/app/routes/_authenticated/_profile/profile.tsx:112
-#: src/app/routes/_authenticated/_profile/profile.tsx:129
+#: src/app/routes/_authenticated/_profile/profile.tsx:120
+#: src/app/routes/_authenticated/_profile/profile.tsx:137
 #: src/lib/components/login/login-form.tsx:93
 msgid "Password"
 msgstr "Contraseña"
 
-#: src/lib/components/data-table/use-generated-columns.tsx:389
-#: src/lib/components/data-table/use-generated-columns.tsx:395
+#: src/lib/components/data-table/use-generated-columns.tsx:391
+#: src/lib/components/data-table/use-generated-columns.tsx:397
 msgid "Failed to delete"
 msgstr "Error al eliminar"
 
@@ -1003,7 +1005,7 @@ msgstr "Error al cancelar los artículos del pedido"
 msgid "Transaction ID"
 msgstr "ID de transacción"
 
-#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:450
+#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:476
 msgid "Allocated"
 msgstr "Asignado"
 
@@ -1012,7 +1014,7 @@ msgstr "Asignado"
 #~ msgstr "Agregar otro grupo de opciones"
 
 #. placeholder {0}: error.message
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:270
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:310
 msgid "Failed to set coupon code for order: {0}"
 msgstr ""
 
@@ -1030,14 +1032,14 @@ msgstr "Colección creada exitosamente"
 
 #: src/app/routes/_authenticated/_orders/components/add-surcharge-form.tsx:88
 #: src/app/routes/_authenticated/_orders/components/shipping-method-selector.tsx:49
-#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:298
+#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:324
 #: src/app/routes/_authenticated/_products/components/add-product-variant-dialog.tsx:298
-#: src/app/routes/_authenticated/_products/components/generate-variants-panel.tsx:208
+#: src/app/routes/_authenticated/_products/components/generate-variants-panel.tsx:290
 #: src/lib/components/layout/language-dialog.tsx:136
 msgid "Price"
 msgstr "Precio"
 
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:343
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:383
 #: src/app/routes/_authenticated/_orders/orders.tsx:115
 msgid "Draft order"
 msgstr "Pedido borrador"
@@ -1080,7 +1082,7 @@ msgstr "Cuando está habilitada, una promoción está disponible en la tienda"
 msgid "When tracked, product variant stock levels will be automatically adjusted when sold. This setting can be overridden by individual product variants."
 msgstr "Cuando se rastrea, los niveles de stock de las variantes de producto se ajustarán automáticamente al venderse. Esta configuración puede ser anulada por las variantes de producto individuales."
 
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:242
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:282
 msgid "Shipping method set for order"
 msgstr "Método de envío establecido para el pedido"
 
@@ -1126,7 +1128,7 @@ msgid "Email address"
 msgstr "Dirección de correo electrónico"
 
 #. placeholder {0}: error.message
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:281
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:321
 msgid "Failed to remove coupon code from order: {0}"
 msgstr ""
 
@@ -1135,8 +1137,8 @@ msgstr ""
 msgid "Regenerate slug from source field"
 msgstr "Regenerar slug del campo fuente"
 
-#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:361
-#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:377
+#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:387
+#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:403
 msgid "Inherit from global settings"
 msgstr "Heredar de configuración global"
 
@@ -1180,7 +1182,7 @@ msgstr "Pago transicionado"
 msgid "Remaining:"
 msgstr "Restante:"
 
-#: src/app/common/duplicate-entity-dialog.tsx:103
+#: src/app/common/duplicate-entity-dialog.tsx:104
 msgid "No duplicator found with code \"{duplicatorCode}\" for {entityName}s"
 msgstr "No se encontró duplicador con código \\\"{duplicatorCode}\\\" para {entityName}"
 
@@ -1201,7 +1203,7 @@ msgstr "Ver resultado del trabajo"
 msgid "Test your shipping methods by simulating a new order."
 msgstr "Pruebe sus métodos de envío simulando un nuevo pedido."
 
-#: src/lib/components/data-input/product-multi-selector-input.tsx:337
+#: src/lib/components/data-input/product-multi-selector-input.tsx:433
 msgid "No items selected"
 msgstr "Ningún elemento seleccionado"
 
@@ -1214,7 +1216,7 @@ msgstr ", {0} seleccionado(s)"
 msgid "No countries found"
 msgstr "No se encontraron países"
 
-#: src/app/routes/_authenticated/_products/components/generate-variants-panel.tsx:176
+#: src/app/routes/_authenticated/_products/components/generate-variants-panel.tsx:181
 msgid "Successfully created variants"
 msgstr "Variantes creadas correctamente"
 
@@ -1233,7 +1235,7 @@ msgstr "Recargo"
 msgid "Payment Methods"
 msgstr "Métodos de pago"
 
-#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:351
+#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:377
 msgid "Stock"
 msgstr "Stock"
 
@@ -1241,7 +1243,7 @@ msgstr "Stock"
 msgid "No customers found"
 msgstr "No se encontraron clientes"
 
-#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:410
+#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:436
 msgid "Use global out-of-stock threshold"
 msgstr "Usar umbral de agotamiento global"
 
@@ -1270,17 +1272,17 @@ msgstr "Dirección eliminada"
 msgid "Only roles assigned to your account are available."
 msgstr "Solo están disponibles los roles asignados a su cuenta."
 
-#: src/app/routes/_authenticated/_system/components/cancel-jobs-bulk-action.tsx:63
+#: src/app/routes/_authenticated/_system/components/cancel-jobs-bulk-action.tsx:65
 msgid "{cancellableCount, plural, one {Cancel {cancellableCount} job} other {Cancel {cancellableCount} jobs}}"
 msgstr ""
 
-#: src/lib/components/data-input/product-multi-selector-input.tsx:399
-#: src/lib/components/shared/configurable-operation-multi-selector.tsx:264
-#: src/lib/components/shared/configurable-operation-selector.tsx:139
+#: src/lib/components/data-input/product-multi-selector-input.tsx:499
+#: src/lib/components/shared/configurable-operation-multi-selector.tsx:265
+#: src/lib/components/shared/configurable-operation-selector.tsx:140
 msgid "{buttonText}"
 msgstr "{buttonText}"
 
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:111
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:113
 msgid "Item added to order"
 msgstr "Elemento agregado al pedido"
 
@@ -1306,16 +1308,20 @@ msgid "Failed to create seller"
 msgstr "Error al crear vendedor"
 
 #. placeholder {0}: entityName.toLowerCase()
-#: src/app/common/duplicate-entity-dialog.tsx:87
+#: src/app/common/duplicate-entity-dialog.tsx:88
 msgid "Configure duplication settings for {0}s"
 msgstr "Configurar ajustes de duplicación para {0}s"
+
+#: src/app/routes/_authenticated/_products/components/generate-variants-panel.tsx:304
+msgid "No variants match the current filter."
+msgstr "Ninguna variante coincide con el filtro actual."
 
 #: src/app/routes/_authenticated/_customers/customers_.$id.tsx:203
 #: src/app/routes/_authenticated/_orders/orders_.$id_.modify.tsx:245
 msgid "Addresses"
 msgstr "Direcciones"
 
-#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:143
+#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:144
 msgid "Add a new option value to the {groupName} option group"
 msgstr "Agregar un nuevo valor de opción al grupo de opciones {groupName}"
 
@@ -1353,11 +1359,11 @@ msgstr "Pedido transicionado"
 #~ msgid "This product has existing variants but no option groups defined. You need to add option groups before creating new variants."
 #~ msgstr "Este producto tiene variantes existentes pero no tiene grupos de opciones definidos. Debe agregar grupos de opciones antes de crear nuevas variantes."
 
-#: src/lib/components/data-table/human-readable-operator.tsx:28
+#: src/lib/components/data-table/human-readable-operator.tsx:30
 msgid "is before"
 msgstr "es antes"
 
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:348
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:388
 msgid "Delete draft order"
 msgstr "Eliminar pedido borrador"
 
@@ -1374,6 +1380,10 @@ msgstr "Nuevo método de pago"
 #: src/app/routes/_authenticated/_promotions/promotions_.$id.tsx:104
 msgid "Successfully updated promotion"
 msgstr "Promoción actualizada exitosamente"
+
+#: src/app/routes/_authenticated/_system/components/cancel-jobs-bulk-action.tsx:43
+msgid "{rejected, plural, one {Failed to cancel {rejected} job} other {Failed to cancel {rejected} jobs}}"
+msgstr "{rejected, plural, one {No se pudo cancelar {rejected} tarea} other {No se pudieron cancelar {rejected} tareas}}"
 
 #: src/lib/components/shared/assign-to-channel-dialog.tsx:111
 #: src/lib/components/shared/channel-selector.tsx:47
@@ -1401,12 +1411,12 @@ msgstr "Canales"
 msgid "View converted to global successfully"
 msgstr "Vista convertida a global correctamente"
 
-#: src/lib/components/data-table/human-readable-operator.tsx:28
+#: src/lib/components/data-table/human-readable-operator.tsx:30
 msgid "before"
 msgstr "antes"
 
 #. placeholder {0}: error.message
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:188
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:228
 msgid "Failed to set customer for order: {0}"
 msgstr ""
 
@@ -1419,7 +1429,7 @@ msgstr "Tamaño"
 msgid "No translation found for {0}"
 msgstr "No se encontró traducción para {0}"
 
-#: src/app/routes/_authenticated/_customers/customers.tsx:96
+#: src/app/routes/_authenticated/_customers/customers.tsx:92
 msgid "New Customer"
 msgstr "Nuevo Cliente"
 
@@ -1437,9 +1447,9 @@ msgstr "Usar como dirección de facturación predeterminada"
 
 #: src/app/common/delete-bulk-action.tsx:139
 #: src/app/routes/_authenticated/_assets/components/asset-bulk-actions.tsx:41
-#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:357
-#: src/lib/components/data-table/use-generated-columns.tsx:405
-#: src/lib/components/data-table/use-generated-columns.tsx:435
+#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:362
+#: src/lib/components/data-table/use-generated-columns.tsx:407
+#: src/lib/components/data-table/use-generated-columns.tsx:437
 #: src/lib/components/data-table/views-sheet.tsx:270
 #: src/lib/components/data-table/views-sheet.tsx:296
 msgid "Delete"
@@ -1480,7 +1490,7 @@ msgstr "Error al renombrar vista"
 msgid "Available"
 msgstr "Disponible"
 
-#: src/lib/components/shared/rich-text-editor/responsive-toolbar.tsx:74
+#: src/lib/components/shared/rich-text-editor/responsive-toolbar.tsx:95
 msgid "Normal"
 msgstr "Normal"
 
@@ -1523,11 +1533,11 @@ msgstr "Dirección actualizada exitosamente"
 #: src/app/routes/_authenticated/_api-keys/api-keys_.$id.tsx:226
 #: src/app/routes/_authenticated/_orders/components/fulfillment-details.tsx:124
 #: src/lib/components/shared/asset/asset-gallery.tsx:747
-#: src/lib/framework/layout-engine/page-layout.tsx:705
+#: src/lib/framework/layout-engine/page-layout.tsx:733
 msgid "Created"
 msgstr "Creado"
 
-#: src/app/routes/_authenticated/_orders/components/customer-address-selector.tsx:76
+#: src/app/routes/_authenticated/_orders/components/customer-address-selector.tsx:63
 msgid "Loading addresses..."
 msgstr "Cargando direcciones..."
 
@@ -1537,7 +1547,7 @@ msgid "Select a target collection to move {0} to."
 msgstr "Seleccione una colección de destino a la que mover {0}."
 
 #. placeholder {0}: error.message
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:232
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:272
 msgid "Failed to unset billing address for order: {0}"
 msgstr ""
 
@@ -1545,7 +1555,7 @@ msgstr ""
 msgid "Customer details updated"
 msgstr "Detalles del cliente actualizados"
 
-#: src/lib/components/data-table/human-readable-operator.tsx:38
+#: src/lib/components/data-table/human-readable-operator.tsx:40
 msgid "not in"
 msgstr "no en"
 
@@ -1561,21 +1571,21 @@ msgstr "Nueva opción de producto"
 msgid "Go to last page"
 msgstr "Ir a la última página"
 
-#: src/app/common/duplicate-entity-dialog.tsx:112
+#: src/app/common/duplicate-entity-dialog.tsx:113
 #: src/app/routes/_authenticated/_api-keys/components/rotate-api-key-button.tsx:61
 #: src/app/routes/_authenticated/_assets/components/manage-tags-dialog.tsx:203
 #: src/app/routes/_authenticated/_collections/components/move-collections-dialog.tsx:418
 #: src/app/routes/_authenticated/_orders/components/add-manual-payment-dialog.tsx:168
-#: src/app/routes/_authenticated/_orders/components/fulfill-order-dialog.tsx:310
+#: src/app/routes/_authenticated/_orders/components/fulfill-order-dialog.tsx:311
 #: src/app/routes/_authenticated/_orders/components/order-modification-preview-dialog.tsx:352
 #: src/app/routes/_authenticated/_orders/components/refund-order-dialog.tsx:358
 #: src/app/routes/_authenticated/_orders/components/settle-refund-dialog.tsx:71
-#: src/app/routes/_authenticated/_products/components/assign-facet-values-dialog.tsx:270
-#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:493
+#: src/app/routes/_authenticated/_products/components/assign-facet-values-dialog.tsx:273
+#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:498
 #: src/app/routes/_authenticated/_system/settings-store.tsx:140
-#: src/lib/components/data-input/product-multi-selector-input.tsx:370
+#: src/lib/components/data-input/product-multi-selector-input.tsx:470
 #: src/lib/components/data-table/data-table-bulk-action-item.tsx:122
-#: src/lib/components/data-table/use-generated-columns.tsx:421
+#: src/lib/components/data-table/use-generated-columns.tsx:423
 #: src/lib/components/data-table/views-sheet.tsx:217
 #: src/lib/components/data-table/views-sheet.tsx:293
 #: src/lib/components/layout/manage-languages-dialog.tsx:379
@@ -1590,11 +1600,11 @@ msgid "Cancel"
 msgstr "Cancelar"
 
 #. placeholder {0}: error.message
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:95
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:97
 msgid "Failed to update order custom fields: {0}"
 msgstr ""
 
-#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:127
+#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:146
 #: src/app/routes/_authenticated/_products/components/add-product-variant-dialog.tsx:160
 msgid "Successfully created product variant"
 msgstr "Variante de producto creada exitosamente"
@@ -1625,7 +1635,7 @@ msgstr "Nueva categoría de impuesto"
 msgid "Partial refund completed"
 msgstr "Reembolso parcial completado"
 
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:452
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:492
 msgid "Set custom fields"
 msgstr "Establecer campos personalizados"
 
@@ -1635,7 +1645,7 @@ msgstr "Establecer campos personalizados"
 msgid "Collections"
 msgstr "Colecciones"
 
-#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:453
+#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:458
 msgid "Delete variant"
 msgstr "Eliminar variante"
 
@@ -1653,7 +1663,7 @@ msgstr "Motivo:"
 
 #: src/app/routes/_authenticated/_orders/components/order-detail-shared.tsx:291
 #: src/app/routes/_authenticated/_orders/orders_.$id_.modify.tsx:248
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:470
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:510
 msgid "Shipping address"
 msgstr "Dirección de envío"
 
@@ -1676,7 +1686,7 @@ msgstr "Categorías de impuestos"
 msgid "Private collections are not visible in the shop"
 msgstr "Las colecciones privadas no son visibles en la tienda"
 
-#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:236
+#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:262
 #: src/app/routes/_authenticated/_products/products_.$id.tsx:229
 msgid "When enabled, a product is available in the shop"
 msgstr "Cuando está habilitado, un producto está disponible en la tienda"
@@ -1706,7 +1716,7 @@ msgstr "Nueva promoción"
 msgid "Default Shipping Address"
 msgstr "Dirección de Envío Predeterminada"
 
-#: src/lib/components/data-table/human-readable-operator.tsx:63
+#: src/lib/components/data-table/human-readable-operator.tsx:65
 msgid "{operator}"
 msgstr "{operator}"
 
@@ -1714,9 +1724,9 @@ msgstr "{operator}"
 msgid "Refund required"
 msgstr "Reembolso requerido"
 
-#: src/app/routes/_authenticated/_orders/components/fulfill-order-dialog.tsx:221
-#: src/app/routes/_authenticated/_orders/components/fulfill-order-dialog.tsx:227
-#: src/app/routes/_authenticated/_orders/components/fulfill-order-dialog.tsx:316
+#: src/app/routes/_authenticated/_orders/components/fulfill-order-dialog.tsx:222
+#: src/app/routes/_authenticated/_orders/components/fulfill-order-dialog.tsx:228
+#: src/app/routes/_authenticated/_orders/components/fulfill-order-dialog.tsx:317
 msgid "Fulfill order"
 msgstr "Cumplir pedido"
 
@@ -1729,7 +1739,7 @@ msgctxt "date-range"
 msgid "Last 30 days"
 msgstr "Últimos 30 días"
 
-#: src/app/routes/_authenticated/_products/components/assign-facet-values-dialog.tsx:235
+#: src/app/routes/_authenticated/_products/components/assign-facet-values-dialog.tsx:238
 msgid "No facet values"
 msgstr "Sin valores de faceta"
 
@@ -1764,10 +1774,10 @@ msgstr "Reembolso liquidado exitosamente"
 #: src/app/routes/_authenticated/_option-groups/option-groups_.$id.tsx:160
 #: src/app/routes/_authenticated/_orders/components/order-line-custom-fields-form.tsx:51
 #: src/app/routes/_authenticated/_payment-methods/payment-methods_.$id.tsx:138
-#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:226
-#: src/app/routes/_authenticated/_products/components/assign-facet-values-dialog.tsx:276
+#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:252
+#: src/app/routes/_authenticated/_products/components/assign-facet-values-dialog.tsx:279
 #: src/app/routes/_authenticated/_products/products_.$id.tsx:219
-#: src/app/routes/_authenticated/_profile/profile.tsx:84
+#: src/app/routes/_authenticated/_profile/profile.tsx:92
 #: src/app/routes/_authenticated/_promotions/promotions_.$id.tsx:144
 #: src/app/routes/_authenticated/_roles/roles_.$id.tsx:84
 #: src/app/routes/_authenticated/_sellers/sellers_.$id.tsx:78
@@ -1776,11 +1786,11 @@ msgstr "Reembolso liquidado exitosamente"
 #: src/app/routes/_authenticated/_tax-categories/tax-categories_.$id.tsx:96
 #: src/app/routes/_authenticated/_tax-rates/tax-rates_.$id.tsx:93
 #: src/app/routes/_authenticated/_zones/zones_.$id.tsx:83
-#: src/lib/framework/page/detail-page.tsx:189
+#: src/lib/framework/page/detail-page.tsx:185
 msgid "Update"
 msgstr "Actualizar"
 
-#: src/lib/components/shared/rich-text-editor/responsive-toolbar.tsx:76
+#: src/lib/components/shared/rich-text-editor/responsive-toolbar.tsx:97
 msgid "Heading 2"
 msgstr "Encabezado 2"
 
@@ -1788,7 +1798,7 @@ msgstr "Encabezado 2"
 msgid "Order placed"
 msgstr "Pedido realizado"
 
-#: src/app/routes/_authenticated/_profile/profile.tsx:63
+#: src/app/routes/_authenticated/_profile/profile.tsx:71
 msgid "Successfully updated profile"
 msgstr "Perfil actualizado exitosamente"
 
@@ -1809,7 +1819,7 @@ msgstr "Método de pago"
 msgid "Edit"
 msgstr "Editar"
 
-#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:183
+#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:188
 msgid "Variant updated successfully"
 msgstr "Variante actualizada correctamente"
 
@@ -1822,11 +1832,11 @@ msgstr "Filtrar por nombre de colección"
 msgid "Note added"
 msgstr "Nota agregada"
 
-#: src/app/routes/_authenticated/_orders/components/fulfill-order-dialog.tsx:230
+#: src/app/routes/_authenticated/_orders/components/fulfill-order-dialog.tsx:231
 msgid "Select quantities to fulfill and configure the fulfillment handler"
 msgstr "Seleccione las cantidades a cumplir y configure el gestor de cumplimiento"
 
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:228
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:268
 msgid "Billing address unset for order"
 msgstr "Dirección de facturación eliminada del pedido"
 
@@ -1835,12 +1845,12 @@ msgid "Starts at"
 msgstr "Comienza en"
 
 #: src/app/common/duplicate-bulk-action.tsx:131
-#: src/app/common/duplicate-entity-dialog.tsx:115
+#: src/app/common/duplicate-entity-dialog.tsx:116
 #: src/lib/components/data-table/views-sheet.tsx:244
 msgid "Duplicate"
 msgstr "Duplicar"
 
-#: src/lib/components/data-table/data-table.tsx:558
+#: src/lib/components/data-table/data-table.tsx:588
 #: src/lib/components/shared/customer-group-selector.tsx:56
 msgid "No results"
 msgstr "Sin resultados"
@@ -1945,11 +1955,15 @@ msgstr "Solo lectura"
 msgid "Failed to duplicate global view"
 msgstr "Error al duplicar vista global"
 
+#: src/app/routes/_authenticated/_products/components/generate-variants-panel.tsx:254
+msgid "Showing {shown} of {total} • {selected} selected"
+msgstr "Mostrando {shown} de {total} • {selected} seleccionadas"
+
 #: src/app/routes/_authenticated/_shipping-methods/components/test-single-shipping-method-sheet.tsx:37
 msgid "Test Shipping Method"
 msgstr "Probar método de envío"
 
-#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:465
+#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:491
 #: src/app/routes/_authenticated/_products/products_.$id.tsx:333
 msgid "Facet Values"
 msgstr "Valores de Faceta"
@@ -2337,7 +2351,7 @@ msgid "Registered"
 msgstr "Registrado"
 
 #. placeholder {0}: error.message
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:199
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:239
 msgid "Failed to set shipping address for order: {0}"
 msgstr ""
 
@@ -2417,7 +2431,7 @@ msgstr "Buscar grupos de opciones..."
 msgid "Modify order"
 msgstr "Modificar pedido"
 
-#: src/lib/components/data-input/product-multi-selector-input.tsx:322
+#: src/lib/components/data-input/product-multi-selector-input.tsx:418
 msgid "Selected Items"
 msgstr "Elementos seleccionados"
 
@@ -2425,7 +2439,7 @@ msgstr "Elementos seleccionados"
 msgid "Values"
 msgstr "Valores"
 
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:170
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:172
 msgid "Customer set for order"
 msgstr "Cliente establecido para el pedido"
 
@@ -2438,7 +2452,7 @@ msgstr "Cliente establecido para el pedido"
 msgid "Facets"
 msgstr "Facetas"
 
-#: src/app/routes/_authenticated/_products/components/generate-variants-panel.tsx:211
+#: src/app/routes/_authenticated/_products/components/generate-variants-panel.tsx:293
 msgid "Stock on Hand"
 msgstr "Stock Disponible"
 
@@ -2469,7 +2483,8 @@ msgstr "Eliminar columna"
 msgid "Assign existing"
 msgstr "Asignar existente"
 
-#: src/lib/components/data-table/human-readable-operator.tsx:34
+#: src/lib/components/data-table/filters/data-table-enum-filter.tsx:19
+#: src/lib/components/data-table/human-readable-operator.tsx:36
 msgid "is null"
 msgstr "es nulo"
 
@@ -2493,7 +2508,7 @@ msgstr "Insertar una nueva imagen con origen, título y dimensiones"
 msgid "Failed to create facet value"
 msgstr "Error al crear valor de faceta"
 
-#: src/lib/components/data-table/human-readable-operator.tsx:24
+#: src/lib/components/data-table/human-readable-operator.tsx:26
 msgid "="
 msgstr "="
 
@@ -2590,7 +2605,7 @@ msgstr "Recalcular envío"
 #: src/app/routes/_authenticated/_assets/assets.tsx:17
 #: src/app/routes/_authenticated/_assets/assets.tsx:40
 #: src/app/routes/_authenticated/_collections/collections_.$id.tsx:225
-#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:482
+#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:508
 #: src/app/routes/_authenticated/_products/products_.$id.tsx:366
 msgid "Assets"
 msgstr "Recursos"
@@ -2601,12 +2616,12 @@ msgstr "Esto eliminará todos los grupos de opciones de este producto y volverá
 
 #: src/app/routes/_authenticated/_orders/components/order-detail-shared.tsx:299
 #: src/app/routes/_authenticated/_orders/orders_.$id_.modify.tsx:277
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:502
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:532
 msgid "Billing address"
 msgstr "Dirección de facturación"
 
 #: src/app/routes/_authenticated/_facets/components/facet-values-table.tsx:131
-#: src/app/routes/_authenticated/_products/components/assign-facet-values-dialog.tsx:169
+#: src/app/routes/_authenticated/_products/components/assign-facet-values-dialog.tsx:172
 msgid "Add facet value"
 msgstr "Agregar valor de faceta"
 
@@ -2654,7 +2669,7 @@ msgstr "Ajustando {0} líneas"
 msgid "Add facet values"
 msgstr "Agregar valores de faceta"
 
-#: src/lib/components/data-table/human-readable-operator.tsx:30
+#: src/lib/components/data-table/human-readable-operator.tsx:32
 msgid "after"
 msgstr "después"
 
@@ -2700,7 +2715,7 @@ msgstr "Opciones de Producto"
 msgid "Select country"
 msgstr "Seleccionar país"
 
-#: src/app/routes/_authenticated/_products/components/generate-variants-panel.tsx:330
+#: src/app/routes/_authenticated/_products/components/generate-variants-panel.tsx:427
 msgid "Creating..."
 msgstr "Creando..."
 
@@ -2708,11 +2723,11 @@ msgstr "Creando..."
 msgid "Are you sure you want to delete this global view? This action cannot be undone and will affect all users."
 msgstr "¿Está seguro de que desea eliminar esta vista global? Esta acción no se puede deshacer y afectará a todos los usuarios."
 
-#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:486
+#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:491
 msgid "Force remove option group"
 msgstr "Forzar eliminación del grupo de opciones"
 
-#: src/app/routes/_authenticated/_profile/profile.tsx:132
+#: src/app/routes/_authenticated/_profile/profile.tsx:140
 msgid "Added"
 msgstr "Añadido"
 
@@ -2742,7 +2757,7 @@ msgstr "Límite de uso por cliente"
 msgid "Billing address changed"
 msgstr "Dirección de facturación cambiada"
 
-#: src/lib/components/data-input/select-with-options.tsx:101
+#: src/lib/components/data-input/select-with-options.tsx:107
 msgid "Select an option"
 msgstr "Seleccione una opción"
 
@@ -2771,8 +2786,7 @@ msgstr "Eliminar Vista Global"
 #: src/app/routes/_authenticated/_option-groups/option-groups_.$groupId.options_.$id.tsx:177
 #: src/app/routes/_authenticated/_option-groups/option-groups_.$id.tsx:160
 #: src/app/routes/_authenticated/_payment-methods/payment-methods_.$id.tsx:138
-#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:226
-#: src/app/routes/_authenticated/_products/components/generate-variants-panel.tsx:196
+#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:252
 #: src/app/routes/_authenticated/_products/products_.$id.tsx:219
 #: src/app/routes/_authenticated/_promotions/promotions_.$id.tsx:144
 #: src/app/routes/_authenticated/_roles/roles_.$id.tsx:84
@@ -2805,7 +2819,7 @@ msgstr "De {0} a {1}"
 msgid "Failed to create customer"
 msgstr "Error al crear cliente"
 
-#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:298
+#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:303
 msgid "Option values"
 msgstr "Valores de opción"
 
@@ -2873,7 +2887,7 @@ msgstr "Sobrescribir"
 msgid "Transaction ID is required"
 msgstr "Se requiere ID de transacción"
 
-#: src/lib/components/data-table/human-readable-operator.tsx:60
+#: src/lib/components/data-table/human-readable-operator.tsx:62
 msgid "matches regex"
 msgstr "coincide con regex"
 
@@ -2885,8 +2899,8 @@ msgstr "Vista global renombrada exitosamente"
 msgid "No tags selected"
 msgstr "Ninguna etiqueta seleccionada"
 
-#: src/app/routes/_authenticated/_products/components/generate-variants-panel.tsx:310
-#: src/app/routes/_authenticated/_products/components/generate-variants-panel.tsx:319
+#: src/app/routes/_authenticated/_products/components/generate-variants-panel.tsx:408
+#: src/app/routes/_authenticated/_products/components/generate-variants-panel.tsx:417
 #: src/lib/components/data-table/data-table-facet-value-faceted-filter.tsx:205
 msgid "Back"
 msgstr "Volver"
@@ -2895,7 +2909,7 @@ msgstr "Volver"
 msgid "View renamed successfully"
 msgstr "Vista renombrada correctamente"
 
-#: src/lib/components/data-table/data-table-filter-dialog.tsx:89
+#: src/lib/components/data-table/data-table-filter-dialog.tsx:94
 msgid "Apply filter"
 msgstr "Aplicar filtro"
 
@@ -2948,6 +2962,10 @@ msgstr "Dirección actualizada"
 msgid "Refund processed successfully"
 msgstr "Reembolso procesado correctamente"
 
+#: src/lib/components/data-table/filters/data-table-enum-filter.tsx:72
+msgid "Select value"
+msgstr ""
+
 #. placeholder {0}: action.label
 #. placeholder {0}: entityType === 'products' ? 'Product' : 'Variant'
 #. placeholder {0}: entry.type.replace(/_/g, ' ').toLowerCase()
@@ -2956,12 +2974,12 @@ msgstr "Reembolso procesado correctamente"
 #: src/app/routes/_authenticated/_orders/components/shipping-method-selector.tsx:37
 #: src/app/routes/_authenticated/_orders/components/shipping-method-selector.tsx:44
 #: src/app/routes/_authenticated/_orders/components/state-transition-control.tsx:77
-#: src/app/routes/_authenticated/_products/components/assign-facet-values-dialog.tsx:189
+#: src/app/routes/_authenticated/_products/components/assign-facet-values-dialog.tsx:192
 #: src/app/routes/_authenticated/_tax-categories/tax-categories.tsx:44
-#: src/lib/components/data-input/product-multi-selector-input.tsx:281
-#: src/lib/components/data-input/product-multi-selector-input.tsx:284
+#: src/lib/components/data-input/product-multi-selector-input.tsx:377
+#: src/lib/components/data-input/product-multi-selector-input.tsx:380
 #: src/lib/components/data-input/relation-selector.tsx:404
-#: src/lib/components/shared/rich-text-editor/responsive-toolbar.tsx:418
+#: src/lib/components/shared/rich-text-editor/responsive-toolbar.tsx:439
 msgid "{0}"
 msgstr "{0}"
 
@@ -2991,13 +3009,13 @@ msgstr "Sin idiomas globales configurados"
 msgid "Removing {0} item(s)"
 msgstr "Eliminando {0} elemento(s)"
 
-#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:362
-#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:380
+#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:388
+#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:406
 msgid "Track"
 msgstr "Rastrear"
 
 #: src/app/routes/_authenticated/_products/components/add-product-variant-dialog.tsx:322
-#: src/app/routes/_authenticated/_products/components/generate-variants-panel.tsx:331
+#: src/app/routes/_authenticated/_products/components/generate-variants-panel.tsx:429
 msgid "Create variant"
 msgstr "Crear variante"
 
@@ -3026,11 +3044,11 @@ msgstr "¿Está seguro de que desea salir de esta página? Se perderán los camb
 msgid "Toggle header column"
 msgstr "Alternar columna de encabezado"
 
-#: src/app/routes/_authenticated/_promotions/promotions.tsx:87
+#: src/app/routes/_authenticated/_promotions/promotions.tsx:90
 msgid "New Promotion"
 msgstr "Nueva Promoción"
 
-#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:151
+#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:152
 msgid "Option value name"
 msgstr "Nombre del valor de opción"
 
@@ -3067,7 +3085,7 @@ msgstr "Valores predeterminados del canal"
 msgid "Failed to create tax category"
 msgstr "Error al crear categoría de impuesto"
 
-#: src/lib/components/data-table/data-table-filter-dialog.tsx:55
+#: src/lib/components/data-table/data-table-filter-dialog.tsx:58
 msgid "Set filter criteria for the {columnId} column"
 msgstr "Establecer criterios de filtro para la columna {columnId}"
 
@@ -3090,7 +3108,7 @@ msgstr "Cola de trabajos"
 msgid "Please confirm you have saved the API key before closing."
 msgstr "Confirme que ha guardado el API Key antes de cerrar."
 
-#: src/lib/components/data-table/use-generated-columns.tsx:411
+#: src/lib/components/data-table/use-generated-columns.tsx:413
 msgid "Confirm deletion"
 msgstr "Confirmar eliminación"
 
@@ -3110,7 +3128,7 @@ msgstr "Métricas de pedidos"
 msgid "Select display language"
 msgstr "Seleccione el idioma de visualización"
 
-#: src/app/routes/_authenticated/_profile/profile.tsx:120
+#: src/app/routes/_authenticated/_profile/profile.tsx:128
 msgid "Authentication methods"
 msgstr "Métodos de autenticación"
 
@@ -3122,7 +3140,7 @@ msgstr "inicio"
 msgid "Failed to rotate API key"
 msgstr "Error al rotar el API Key"
 
-#: src/lib/components/data-table/human-readable-operator.tsx:36
+#: src/lib/components/data-table/human-readable-operator.tsx:38
 msgid "in"
 msgstr "en"
 
@@ -3132,10 +3150,10 @@ msgid "Search roles..."
 msgstr "Buscar roles..."
 
 #: src/app/routes/_authenticated/_system/components/cancel-jobs-bulk-action.tsx:35
-msgid "Successfully cancelled {fulfilled} jobs"
-msgstr ""
+#~ msgid "Successfully cancelled {fulfilled} jobs"
+#~ msgstr ""
 
-#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:69
+#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:71
 #: src/app/routes/_authenticated/_product-variants/product-variants.tsx:19
 #: src/app/routes/_authenticated/_product-variants/product-variants.tsx:28
 msgid "Product Variants"
@@ -3188,7 +3206,7 @@ msgstr "Vendedor creado exitosamente"
 msgid "Successfully updated shipping method"
 msgstr "Método de envío actualizado correctamente"
 
-#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:137
+#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:156
 msgid "Failed to update product variant"
 msgstr "Error al actualizar variante de producto"
 
@@ -3227,7 +3245,7 @@ msgstr "Cargar {0} más ({remaining} restantes)"
 msgid "Facet values"
 msgstr "Valores de faceta"
 
-#: src/lib/components/data-table/data-table.tsx:228
+#: src/lib/components/data-table/data-table.tsx:237
 msgid "Failed to reorder items"
 msgstr "Error al reordenar los artículos"
 
@@ -3253,7 +3271,7 @@ msgstr "Envío"
 msgid "useWidgetDimensions must be used within a DashboardBaseWidget"
 msgstr "useWidgetDimensions debe usarse dentro de un DashboardBaseWidget"
 
-#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:488
+#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:493
 msgid "This option group is in use by existing variants. Force removing it may affect those variants. Are you sure?"
 msgstr "Este grupo de opciones está en uso por variantes existentes. Forzar su eliminación puede afectar a esas variantes. ¿Está seguro?"
 
@@ -3295,7 +3313,7 @@ msgstr "Error al actualizar el método de envío"
 msgid "Shipping Methods"
 msgstr "Métodos de envío"
 
-#: src/app/routes/_authenticated/_orders/components/customer-address-selector.tsx:71
+#: src/app/routes/_authenticated/_orders/components/customer-address-selector.tsx:58
 msgid "Select an address"
 msgstr "Seleccione una dirección"
 
@@ -3341,11 +3359,12 @@ msgstr "Método de envío cambiado"
 msgid "Tax description"
 msgstr "Descripción del impuesto"
 
-#: src/lib/components/data-table/human-readable-operator.tsx:53
+#: src/lib/components/data-table/human-readable-operator.tsx:55
 msgid "is less than or equal to"
 msgstr "es menor o igual que"
 
-#: src/lib/components/data-table/human-readable-operator.tsx:26
+#: src/lib/components/data-table/filters/data-table-enum-filter.tsx:18
+#: src/lib/components/data-table/human-readable-operator.tsx:28
 msgid "is not equal to"
 msgstr "no es igual a"
 
@@ -3409,7 +3428,7 @@ msgstr "Artículos reembolsados"
 #~ msgstr "Asignar opciones a variante existente"
 
 #. placeholder {0}: entityName.toLowerCase()
-#: src/app/common/duplicate-entity-dialog.tsx:84
+#: src/app/common/duplicate-entity-dialog.tsx:85
 msgid "Duplicate {0}s"
 msgstr "Duplicar {0}s"
 
@@ -3441,7 +3460,7 @@ msgstr "No Ejecutándose"
 msgid "Assigned"
 msgstr "Asignado"
 
-#: src/lib/components/shared/rich-text-editor/responsive-toolbar.tsx:75
+#: src/lib/components/shared/rich-text-editor/responsive-toolbar.tsx:96
 msgid "Heading 1"
 msgstr "Encabezado 1"
 
@@ -3462,7 +3481,7 @@ msgstr "Agregar fila después"
 msgid "Tax total"
 msgstr "Total de impuestos"
 
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:374
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:414
 msgid "Draft order status"
 msgstr "Estado del borrador del pedido"
 
@@ -3483,11 +3502,11 @@ msgstr "Valor de faceta creado exitosamente"
 msgid "Marketing"
 msgstr "Marketing"
 
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:311
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:351
 msgid "Draft order deleted"
 msgstr "Pedido borrador eliminado"
 
-#: src/lib/components/data-table/human-readable-operator.tsx:40
+#: src/lib/components/data-table/human-readable-operator.tsx:42
 msgid "greater than"
 msgstr "mayor que"
 
@@ -3552,11 +3571,9 @@ msgstr "Sin dirección de facturación"
 msgid "Facet"
 msgstr "Faceta"
 
-#. placeholder {0}: import { DataTableBulkActionItem } from '@/vdb/components/data-table/data-table-bulk-action-item.js'; import { BulkActionComponent } from '@/vdb/framework/extension-api/types/data-table.js'; import { api } from '@/vdb/graphql/api.js'; import { usePaginatedList } from '@/vdb/hooks/use-paginated-list.js'; import { plural } from '@lingui/core/macro'; import { Plural, useLingui } from '@lingui/react/macro'; import { useMutation } from '@tanstack/react-query'; import { Ban } from 'lucide-react'; import { toast } from 'sonner'; import { cancelJobDocument } from '../job-queue.graphql.js'; export const CancelJobsBulkAction: BulkActionComponent<any> = ({ selection, table }) => { const { refetchPaginatedList } = usePaginatedList(); const { t } = useLingui(); const cancellableJobs = selection.filter(job => job.state === 'RUNNING' || job.state === 'PENDING'); const cancellableCount = cancellableJobs.length; const { mutate, isPending } = useMutation({ mutationFn: async () => { const results = await Promise.allSettled( cancellableJobs.map(job => api.mutate(cancelJobDocument, { jobId: job.id })), ); const fulfilled = results.filter(r => r.status === 'fulfilled').length; const rejected = results.filter(r => r.status === 'rejected').length; return { fulfilled, rejected }; }, onSuccess: ({ fulfilled, rejected }) => { if (fulfilled > 0) { toast.success( plural(fulfilled, { one: t`Successfully cancelled ${fulfilled} job`, other: t`Successfully cancelled ${fulfilled} jobs`, }), ); } if (rejected > 0) { toast.error( plural(rejected, { one: t`Failed to cancel ${rejected} job`, other: t`Failed to cancel ${rejected} jobs`, }), ); } refetchPaginatedList(); table.resetRowSelection(); }, }); if (cancellableCount === 0) { return null; } return ( <DataTableBulkActionItem requiresPermission={['DeleteSettings', 'DeleteSystem']} onClick={() => mutate()} disabled={isPending} label={ <Plural value={cancellableCount} one={`Cancel ${cancellableCount} job`} other={`Cancel ${cancellableCount} jobs`} /> } confirmationText={ <Plural value={cancellableCount} one={`Are you sure you want to cancel ${cancellableCount} job? This action cannot be undone.`} other={`Are you sure you want to cancel ${cancellableCount} jobs? This action cannot be undone.`} /> } icon={Ban} className="text-destructive" /> ); }; 
-#. placeholder {1}: import { DataTableBulkActionItem } from '@/vdb/components/data-table/data-table-bulk-action-item.js'; import { BulkActionComponent } from '@/vdb/framework/extension-api/types/data-table.js'; import { api } from '@/vdb/graphql/api.js'; import { usePaginatedList } from '@/vdb/hooks/use-paginated-list.js'; import { plural } from '@lingui/core/macro'; import { Plural, useLingui } from '@lingui/react/macro'; import { useMutation } from '@tanstack/react-query'; import { Ban } from 'lucide-react'; import { toast } from 'sonner'; import { cancelJobDocument } from '../job-queue.graphql.js'; export const CancelJobsBulkAction: BulkActionComponent<any> = ({ selection, table }) => { const { refetchPaginatedList } = usePaginatedList(); const { t } = useLingui(); const cancellableJobs = selection.filter(job => job.state === 'RUNNING' || job.state === 'PENDING'); const cancellableCount = cancellableJobs.length; const { mutate, isPending } = useMutation({ mutationFn: async () => { const results = await Promise.allSettled( cancellableJobs.map(job => api.mutate(cancelJobDocument, { jobId: job.id })), ); const fulfilled = results.filter(r => r.status === 'fulfilled').length; const rejected = results.filter(r => r.status === 'rejected').length; return { fulfilled, rejected }; }, onSuccess: ({ fulfilled, rejected }) => { if (fulfilled > 0) { toast.success( plural(fulfilled, { one: t`Successfully cancelled ${fulfilled} job`, other: t`Successfully cancelled ${fulfilled} jobs`, }), ); } if (rejected > 0) { toast.error( plural(rejected, { one: t`Failed to cancel ${rejected} job`, other: t`Failed to cancel ${rejected} jobs`, }), ); } refetchPaginatedList(); table.resetRowSelection(); }, }); if (cancellableCount === 0) { return null; } return ( <DataTableBulkActionItem requiresPermission={['DeleteSettings', 'DeleteSystem']} onClick={() => mutate()} disabled={isPending} label={ <Plural value={cancellableCount} one={`Cancel ${cancellableCount} job`} other={`Cancel ${cancellableCount} jobs`} /> } confirmationText={ <Plural value={cancellableCount} one={`Are you sure you want to cancel ${cancellableCount} job? This action cannot be undone.`} other={`Are you sure you want to cancel ${cancellableCount} jobs? This action cannot be undone.`} /> } icon={Ban} className="text-destructive" /> ); }; 
 #: src/app/routes/_authenticated/_system/components/cancel-jobs-bulk-action.tsx:41
-msgid "{rejected, plural, one {{0}} other {{1}}}"
-msgstr ""
+#~ msgid "{rejected, plural, one {{0}} other {{1}}}"
+#~ msgstr ""
 
 #: src/lib/components/shared/assigned-channels.tsx:58
 msgid "Cannot remove from active channel"
@@ -3566,7 +3583,7 @@ msgstr "No se puede eliminar del canal activo"
 msgid "Not set"
 msgstr "No establecido"
 
-#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:504
+#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:509
 msgid "Force remove"
 msgstr "Forzar eliminación"
 
@@ -3602,8 +3619,8 @@ msgstr "Estado de cumplimiento actualizado exitosamente"
 #: src/app/routes/_authenticated/_option-groups/option-groups_.$id.tsx:71
 #: src/app/routes/_authenticated/_option-groups/option-groups_.$id.tsx:211
 #: src/app/routes/_authenticated/_option-groups/option-groups.tsx:38
-#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:64
-#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:66
+#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:66
+#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:67
 #: src/app/routes/_authenticated/_products/products_.$id.tsx:56
 #: src/app/routes/_authenticated/_products/products.tsx:24
 #: src/app/routes/_authenticated/_products/products.tsx:47
@@ -3658,12 +3675,16 @@ msgstr "Vista global duplicada exitosamente"
 msgid "Created by"
 msgstr "Creado por"
 
+#: src/app/routes/_authenticated/_products/components/generate-variants-panel.tsx:240
+msgid "Filter variants..."
+msgstr "Filtrar variantes..."
+
 #: src/app/routes/_authenticated/_product-variants/components/add-currency-dropdown.tsx:35
 msgid "Add a price in another currency"
 msgstr "Añadir un precio en otra moneda"
 
 #: src/app/routes/_authenticated/_administrators/administrators_.$id.tsx:127
-#: src/app/routes/_authenticated/_profile/profile.tsx:106
+#: src/app/routes/_authenticated/_profile/profile.tsx:114
 msgid "Email Address or identifier"
 msgstr "Dirección de correo electrónico o identificador"
 
@@ -3680,7 +3701,7 @@ msgstr "Reembolso #{0} transicionado a {1}"
 msgid "Customers"
 msgstr "Clientes"
 
-#: src/lib/components/shared/rich-text-editor/responsive-toolbar.tsx:78
+#: src/lib/components/shared/rich-text-editor/responsive-toolbar.tsx:99
 msgid "Heading 4"
 msgstr "Encabezado 4"
 
@@ -3721,7 +3742,7 @@ msgstr "Moviendo {0} colección{1} a {2}"
 msgid "Test"
 msgstr "Prueba"
 
-#: src/lib/components/data-table/human-readable-operator.tsx:32
+#: src/lib/components/data-table/human-readable-operator.tsx:34
 msgid "between"
 msgstr "entre"
 
@@ -3748,7 +3769,7 @@ msgstr "Nota actualizada exitosamente"
 msgid "Failed to settle refund"
 msgstr "Error al liquidar reembolso"
 
-#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:435
+#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:461
 #: src/app/routes/_authenticated/_products/components/add-product-variant-dialog.tsx:311
 msgid "Stock level"
 msgstr "Nivel de stock"
@@ -3773,7 +3794,7 @@ msgstr "Volver a la búsqueda"
 msgid "View duplicated successfully"
 msgstr "Vista duplicada correctamente"
 
-#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:315
+#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:320
 msgid "Remove option group"
 msgstr "Eliminar grupo de opciones"
 
@@ -3798,7 +3819,7 @@ msgid "Countries"
 msgstr "Países"
 
 #. placeholder {0}: error.message
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:160
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:162
 msgid "Failed to remove order line: {0}"
 msgstr ""
 
@@ -3833,7 +3854,7 @@ msgstr "Esta semana"
 msgid "Add a manual payment of {0}"
 msgstr "Agregar un pago manual de {0}"
 
-#: src/lib/components/data-table/human-readable-operator.tsx:36
+#: src/lib/components/data-table/human-readable-operator.tsx:38
 msgid "is in"
 msgstr "está en"
 
@@ -3874,7 +3895,8 @@ msgstr "Claro"
 msgid "Reset"
 msgstr "Restablecer"
 
-#: src/lib/components/data-table/human-readable-operator.tsx:24
+#: src/lib/components/data-table/filters/data-table-enum-filter.tsx:17
+#: src/lib/components/data-table/human-readable-operator.tsx:26
 msgid "is equal to"
 msgstr "es igual a"
 
@@ -3888,7 +3910,7 @@ msgstr "es igual a"
 msgid "Password updated"
 msgstr "Contraseña actualizada"
 
-#: src/lib/components/data-table/human-readable-operator.tsx:58
+#: src/lib/components/data-table/human-readable-operator.tsx:60
 msgid "does not contain"
 msgstr "no contiene"
 
@@ -3946,7 +3968,7 @@ msgstr "+ {0} más"
 msgid "Option Groups"
 msgstr "Grupos de opciones"
 
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:431
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:471
 msgid "Custom fields"
 msgstr "Campos personalizados"
 
@@ -4033,7 +4055,7 @@ msgstr "Enviado"
 #~ msgid "Monitored Resources"
 #~ msgstr "Recursos Monitoreados"
 
-#: src/lib/framework/layout-engine/page-layout.tsx:677
+#: src/lib/framework/layout-engine/page-layout.tsx:705
 msgid "Entity Information"
 msgstr "Información de Entidad"
 
@@ -4063,7 +4085,7 @@ msgstr "Super Administrador"
 #~ msgstr "Algunos recursos están inactivos"
 
 #. placeholder {0}: error.message
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:141
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:143
 msgid "Failed to update order line: {0}"
 msgstr ""
 
@@ -4152,7 +4174,7 @@ msgstr "Valor promedio del pedido"
 msgid "Failed to create zone"
 msgstr "Error al crear zona"
 
-#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:356
+#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:382
 msgid "Stock levels"
 msgstr "Niveles de stock"
 
@@ -4164,7 +4186,7 @@ msgstr "Error al actualizar el API Key"
 msgid "{title}"
 msgstr "{title}"
 
-#: src/app/routes/_authenticated/_orders/components/fulfill-order-dialog.tsx:243
+#: src/app/routes/_authenticated/_orders/components/fulfill-order-dialog.tsx:244
 #: src/app/routes/_authenticated/_orders/components/refund-order-dialog.tsx:83
 #: src/app/routes/_authenticated/_orders/orders_.$id_.modify.tsx:178
 msgid "Order lines"
@@ -4237,13 +4259,17 @@ msgid "Customer information updated"
 msgstr "Información del cliente actualizada"
 
 #. placeholder {0}: error.message
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:318
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:358
 msgid "Failed to delete draft order: {0}"
 msgstr ""
 
 #: src/lib/components/data-table/views-sheet.tsx:120
 msgid "Failed to convert view to global"
 msgstr "Error al convertir vista a global"
+
+#: src/lib/components/data-table/filters/data-table-enum-filter.tsx:53
+msgid "Select operator"
+msgstr ""
 
 #. js-lingui-explicit-id
 #: src/lib/framework/defaults.ts:38
@@ -4272,7 +4298,7 @@ msgstr "Correo anterior:"
 msgid "Save a view as \"Global\" to make it available to all users."
 msgstr "Guarde una vista como \\\"Global\\\" para que esté disponible para todos los usuarios."
 
-#: src/app/routes/_authenticated/_products/components/generate-variants-panel.tsx:179
+#: src/app/routes/_authenticated/_products/components/generate-variants-panel.tsx:184
 msgid "Failed to create variants"
 msgstr "Error al crear las variantes"
 
@@ -4298,11 +4324,11 @@ msgstr "Ocultar contraseña"
 msgid "New seller"
 msgstr "Nuevo vendedor"
 
-#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:153
+#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:154
 msgid "e.g., Red, Large, Cotton"
 msgstr "ej., Rojo, Grande, Algodón"
 
-#: src/app/routes/_authenticated/_profile/profile.tsx:67
+#: src/app/routes/_authenticated/_profile/profile.tsx:75
 msgid "Failed to update profile"
 msgstr "Error al actualizar perfil"
 
@@ -4310,7 +4336,7 @@ msgstr "Error al actualizar perfil"
 msgid "Removed coupon codes"
 msgstr "Códigos de cupón eliminados"
 
-#: src/lib/components/data-table/data-table-filter-dialog.tsx:78
+#: src/lib/components/data-table/data-table-filter-dialog.tsx:83
 msgid "Clear filter"
 msgstr "Limpiar filtro"
 
@@ -4321,6 +4347,10 @@ msgstr "Regiones"
 #: src/lib/components/shared/asset/asset-gallery.tsx:438
 msgid "Drop files here to upload"
 msgstr "Suelte los archivos aquí para cargarlos"
+
+#: src/app/routes/_authenticated/_products/components/generate-variants-panel.tsx:276
+msgid "Toggle all visible variants"
+msgstr "Alternar todas las variantes visibles"
 
 #: src/app/routes/_authenticated/_customers/components/customer-status-badge.tsx:18
 msgid "Verified"
@@ -4372,7 +4402,7 @@ msgstr "O"
 msgid "Manage tags"
 msgstr "Gestionar etiquetas"
 
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:277
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:317
 msgid "Coupon code removed from order"
 msgstr "Código de cupón eliminado del pedido"
 
@@ -4395,8 +4425,12 @@ msgstr "Error al actualizar valor de faceta"
 msgid "Order fulfilled"
 msgstr "Pedido cumplido"
 
+#: src/lib/components/data-input/product-multi-selector-input.tsx:437
+msgid "Loading selected items..."
+msgstr ""
+
 #. placeholder {0}: error.message
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:210
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:250
 msgid "Failed to set billing address for order: {0}"
 msgstr ""
 
@@ -4454,7 +4488,7 @@ msgstr "Las condiciones de verificación de elegibilidad de este método de env�
 msgid "Add coupon code"
 msgstr "Agregar código de cupón"
 
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:261
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:301
 msgid "Coupon code set for order"
 msgstr "Código de cupón establecido para el pedido"
 
@@ -4466,7 +4500,7 @@ msgstr "Campos Personalizados"
 msgid "New Shipping Method"
 msgstr "Nuevo Método de Envío"
 
-#: src/lib/components/data-table/human-readable-operator.tsx:45
+#: src/lib/components/data-table/human-readable-operator.tsx:47
 msgid "is greater than or equal to"
 msgstr "es mayor o igual que"
 
@@ -4477,7 +4511,7 @@ msgstr "Vista previa"
 
 #. placeholder {0}: quantity.max
 #. placeholder {1}: line.quantity
-#: src/app/routes/_authenticated/_orders/components/fulfill-order-dialog.tsx:260
+#: src/app/routes/_authenticated/_orders/components/fulfill-order-dialog.tsx:261
 msgid "{0} of {1} available to fulfill"
 msgstr "{0} de {1} disponibles para cumplir"
 
@@ -4583,13 +4617,18 @@ msgstr "Con seleccionados..."
 msgid "Failed to create stock location"
 msgstr "Error al crear ubicación de stock"
 
-#: src/lib/components/data-table/human-readable-operator.tsx:51
+#: src/lib/components/data-table/human-readable-operator.tsx:53
 msgid "less than or equal"
 msgstr "menor o igual que"
 
 #: src/app/routes/_authenticated/_customer-groups/components/customer-group-members-sheet.tsx:34
 msgid "Customer group members for {customerGroupName}"
 msgstr "Miembros del grupo de clientes para {customerGroupName}"
+
+#. placeholder {0}: e instanceof Error ? e.message : String(e)
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:217
+msgid "Failed to set address for order: {0}"
+msgstr ""
 
 #: src/app/routes/_authenticated/_orders/components/fulfillment-details.tsx:118
 #: src/app/routes/_authenticated/_orders/components/payment-details.tsx:217
@@ -4598,8 +4637,8 @@ msgstr "Miembros del grupo de clientes para {customerGroupName}"
 msgid "State"
 msgstr "Estado"
 
-#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:363
-#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:383
+#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:389
+#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:409
 msgid "Do not track"
 msgstr "No rastrear"
 
@@ -4628,7 +4667,7 @@ msgstr "Estado / Provincia"
 #: src/app/routes/_authenticated/_countries/countries_.$id.tsx:92
 #: src/app/routes/_authenticated/_payment-methods/payment-methods_.$id.tsx:147
 #: src/app/routes/_authenticated/_payment-methods/payment-methods.tsx:42
-#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:235
+#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:261
 #: src/app/routes/_authenticated/_products/products_.$id.tsx:228
 #: src/app/routes/_authenticated/_promotions/promotions_.$id.tsx:153
 #: src/app/routes/_authenticated/_system/scheduled-tasks.tsx:115
@@ -4653,7 +4692,7 @@ msgstr "Editar miembros"
 msgid "Stock on hand"
 msgstr "Stock disponible"
 
-#: src/lib/components/data-table/data-table-filter-dialog.tsx:52
+#: src/lib/components/data-table/data-table-filter-dialog.tsx:55
 msgid "Filter by {columnId}"
 msgstr "Filtrar por {columnId}"
 
@@ -4677,7 +4716,7 @@ msgstr "Previsualizar cambios"
 msgid "Failed to remove {entityType} from channel"
 msgstr "Error al eliminar {entityType} del canal"
 
-#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:191
+#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:196
 msgid "Variant deleted successfully"
 msgstr "Variante eliminada correctamente"
 
@@ -4703,11 +4742,11 @@ msgstr "Sus últimos pedidos"
 msgid "Scheduled Tasks"
 msgstr "Tareas programadas"
 
-#: src/lib/components/data-table/use-generated-columns.tsx:414
+#: src/lib/components/data-table/use-generated-columns.tsx:416
 msgid "Are you sure you want to delete this item? This action cannot be undone."
 msgstr "¿Está seguro de que desea eliminar este elemento? Esta acción no se puede deshacer."
 
-#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:342
+#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:347
 msgid "Variants"
 msgstr "Variantes"
 
@@ -4726,7 +4765,7 @@ msgstr "Configuración"
 msgid "Settings Store"
 msgstr "Almacén de configuración"
 
-#: src/lib/components/shared/rich-text-editor/responsive-toolbar.tsx:77
+#: src/lib/components/shared/rich-text-editor/responsive-toolbar.tsx:98
 msgid "Heading 3"
 msgstr "Encabezado 3"
 
@@ -4751,7 +4790,7 @@ msgstr "Identificador"
 msgid "Failed to update collection"
 msgstr "Error al actualizar colección"
 
-#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:278
+#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:304
 msgid "Price and tax"
 msgstr "Precio e impuesto"
 
@@ -4759,7 +4798,7 @@ msgstr "Precio e impuesto"
 msgid "Order not found"
 msgstr "Pedido no encontrado"
 
-#: src/lib/components/data-table/human-readable-operator.tsx:26
+#: src/lib/components/data-table/human-readable-operator.tsx:28
 msgid "!="
 msgstr "!="
 
@@ -4798,7 +4837,7 @@ msgstr "Agregar etiquetas..."
 #~ msgstr "Error al crear el grupo de opciones de producto"
 
 #. placeholder {0}: selectedIds.length
-#: src/lib/components/data-input/product-multi-selector-input.tsx:404
+#: src/lib/components/data-input/product-multi-selector-input.tsx:504
 msgid "{0} items selected"
 msgstr "{0} elementos seleccionados"
 
@@ -4821,8 +4860,8 @@ msgid "Contents"
 msgstr "Contenidos"
 
 #: src/app/routes/_authenticated/_system/components/cancel-jobs-bulk-action.tsx:43
-msgid "Failed to cancel {rejected} jobs"
-msgstr ""
+#~ msgid "Failed to cancel {rejected} jobs"
+#~ msgstr ""
 
 #: src/lib/components/data-table/views-sheet.tsx:110
 msgid "Failed to convert global view to personal view"
@@ -4847,11 +4886,11 @@ msgstr "Agregar pago ({0})"
 msgid "System"
 msgstr "Sistema"
 
-#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:264
+#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:290
 msgid "Variant name"
 msgstr "Nombre de la variante"
 
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:543
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:579
 msgid "Remove"
 msgstr "Quitar"
 
@@ -4936,7 +4975,7 @@ msgstr "Posición de la colección actualizada"
 msgid "Add \"{newOptionInput}\""
 msgstr "Agregar \\\"{newOptionInput}\\\""
 
-#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:218
+#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:244
 msgid "New product variant"
 msgstr "Nueva variante de producto"
 
@@ -4960,7 +4999,7 @@ msgstr "Idioma Predeterminado"
 msgid "Token"
 msgstr "Token"
 
-#: src/app/routes/_authenticated/_orders/components/fulfill-order-dialog.tsx:314
+#: src/app/routes/_authenticated/_orders/components/fulfill-order-dialog.tsx:315
 msgid "Fulfilling..."
 msgstr "Cumpliendo..."
 
@@ -5056,7 +5095,7 @@ msgid "Default language"
 msgstr "Idioma predeterminado"
 
 #: src/app/routes/_authenticated/_customers/customers_.$id.tsx:253
-#: src/app/routes/_authenticated/_customers/customers.tsx:48
+#: src/app/routes/_authenticated/_customers/customers.tsx:44
 msgid "Status"
 msgstr "Estado"
 
@@ -5086,7 +5125,7 @@ msgstr "ej. impuesto:"
 #~ msgid "Add Stock to Location"
 #~ msgstr "Agregar Stock a Ubicación"
 
-#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:105
+#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:106
 msgid "Successfully added option value"
 msgstr "Valor de opción agregado exitosamente"
 
@@ -5094,8 +5133,8 @@ msgstr "Valor de opción agregado exitosamente"
 msgid "Collection moved to new parent"
 msgstr "Colección movida al nuevo padre"
 
-#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:206
-#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:215
+#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:211
+#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:220
 msgid "Option group removed"
 msgstr "Grupo de opciones eliminado"
 
@@ -5110,6 +5149,10 @@ msgstr "Se requerirá un pago adicional de {formattedDiff}."
 #: src/app/routes/_authenticated/_global-settings/global-settings.tsx:144
 msgid "Track inventory by default"
 msgstr "Rastrear inventario por defecto"
+
+#: src/app/routes/_authenticated/_products/components/generate-variants-panel.tsx:258
+msgid "{selected} of {total} selected"
+msgstr "{selected} de {total} seleccionadas"
 
 #: src/app/routes/_authenticated/_shipping-methods/shipping-methods_.$id.tsx:90
 msgid "Successfully created shipping method"
@@ -5143,11 +5186,11 @@ msgid "Customer not found"
 msgstr "Cliente no encontrado"
 
 #. placeholder {0}: entityName.toLowerCase()
-#: src/lib/components/data-input/default-relation-input.tsx:605
+#: src/lib/components/data-input/default-relation-input.tsx:663
 msgid "Select {0}s"
 msgstr "Seleccionar {0}"
 
-#: src/app/routes/_authenticated/_products/components/assign-facet-values-dialog.tsx:253
+#: src/app/routes/_authenticated/_products/components/assign-facet-values-dialog.tsx:256
 msgid "New facet values to add:"
 msgstr "Nuevos valores de faceta a agregar:"
 
@@ -5158,11 +5201,11 @@ msgstr "Error al procesar el reembolso"
 
 #: src/app/routes/_authenticated/_administrators/administrators_.$id.tsx:115
 #: src/app/routes/_authenticated/_customers/customers_.$id.tsx:176
-#: src/app/routes/_authenticated/_profile/profile.tsx:94
+#: src/app/routes/_authenticated/_profile/profile.tsx:102
 msgid "First name"
 msgstr "Nombre"
 
-#: src/lib/components/data-table/human-readable-operator.tsx:56
+#: src/lib/components/data-table/human-readable-operator.tsx:58
 msgid "contains"
 msgstr "contiene"
 
@@ -5170,7 +5213,7 @@ msgstr "contiene"
 msgid "No option groups found"
 msgstr "No se encontraron grupos de opciones"
 
-#: src/lib/components/data-input/product-multi-selector-input.tsx:91
+#: src/lib/components/data-input/product-multi-selector-input.tsx:162
 msgid "No items found"
 msgstr "No se encontraron elementos"
 
@@ -5192,7 +5235,7 @@ msgid "Unverified"
 msgstr "No verificado"
 
 #: src/app/routes/_authenticated/_orders/components/edit-order-table.tsx:111
-#: src/app/routes/_authenticated/_orders/components/fulfill-order-dialog.tsx:267
+#: src/app/routes/_authenticated/_orders/components/fulfill-order-dialog.tsx:268
 #: src/app/routes/_authenticated/_orders/components/order-table.tsx:78
 msgid "Quantity"
 msgstr "Cantidad"
@@ -5201,13 +5244,13 @@ msgstr "Cantidad"
 msgid "Add filter"
 msgstr "Agregar filtro"
 
-#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:283
+#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:309
 #: src/app/routes/_authenticated/_tax-rates/tax-rates_.$id.tsx:127
 msgid "Tax category"
 msgstr "Categoría de impuesto"
 
-#: src/app/routes/_authenticated/_profile/profile.tsx:31
-#: src/app/routes/_authenticated/_profile/profile.tsx:76
+#: src/app/routes/_authenticated/_profile/profile.tsx:38
+#: src/app/routes/_authenticated/_profile/profile.tsx:84
 #: src/lib/components/layout/nav-user.tsx:108
 msgid "Profile"
 msgstr "Perfil"
@@ -5216,11 +5259,11 @@ msgstr "Perfil"
 msgid "Test data has been updated. Click \"Run Test\" to see updated results."
 msgstr "Los datos de prueba se han actualizado. Haga clic en \\\"Ejecutar prueba\\\" para ver los resultados actualizados."
 
-#: src/lib/components/data-table/human-readable-operator.tsx:38
+#: src/lib/components/data-table/human-readable-operator.tsx:40
 msgid "is not in"
 msgstr "no está en"
 
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:132
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:134
 msgid "Order line updated"
 msgstr "Línea de pedido actualizada"
 
@@ -5251,7 +5294,7 @@ msgstr "{entityType} eliminado del canal correctamente"
 #: src/app/routes/_authenticated/_option-groups/option-groups_.$id.tsx:81
 #: src/app/routes/_authenticated/_option-groups/option-groups.tsx:17
 #: src/app/routes/_authenticated/_option-groups/option-groups.tsx:24
-#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:278
+#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:283
 msgid "Option Groups"
 msgstr "Grupos de Opciones"
 
@@ -5260,7 +5303,7 @@ msgstr "Grupos de Opciones"
 msgid "Add surcharge"
 msgstr "Añadir recargo"
 
-#: src/app/routes/_authenticated/_products/components/assign-facet-values-dialog.tsx:199
+#: src/app/routes/_authenticated/_products/components/assign-facet-values-dialog.tsx:202
 msgid "Current facet values"
 msgstr "Valores de faceta actuales"
 
@@ -5269,15 +5312,15 @@ msgid "Page {page} of {totalPages}"
 msgstr "Página {page} de {totalPages}"
 
 #: src/app/routes/_authenticated/_system/components/cancel-jobs-bulk-action.tsx:42
-msgid "Failed to cancel {rejected} job"
-msgstr ""
+#~ msgid "Failed to cancel {rejected} job"
+#~ msgstr ""
 
 #: src/lib/components/date-range-picker.tsx:79
 msgctxt "date-range"
 msgid "Last month"
 msgstr "Mes pasado"
 
-#: src/app/routes/_authenticated/_countries/countries.tsx:61
+#: src/app/routes/_authenticated/_countries/countries.tsx:59
 msgid "Add Country"
 msgstr "Agregar país"
 
@@ -5290,11 +5333,11 @@ msgstr "Quitar elemento"
 msgid "Video"
 msgstr "Vídeo"
 
-#: src/lib/components/data-table/human-readable-operator.tsx:48
+#: src/lib/components/data-table/human-readable-operator.tsx:50
 msgid "less than"
 msgstr "menor que"
 
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:121
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:123
 msgid "The variant could not be added. Ensure the parent product is enabled."
 msgstr "No se pudo añadir la variante. Asegúrese de que el producto principal esté habilitado."
 
@@ -5322,7 +5365,7 @@ msgstr "Reembolsar y cancelar pedido"
 msgid "Email update verified"
 msgstr "Actualización de correo electrónico verificada"
 
-#: src/lib/components/data-table/human-readable-operator.tsx:32
+#: src/lib/components/data-table/human-readable-operator.tsx:34
 msgid "is between"
 msgstr "está entre"
 
@@ -5356,7 +5399,7 @@ msgstr "Idiomas Globales"
 msgid "New administrator"
 msgstr "Nuevo administrador"
 
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:355
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:395
 msgid "Delete draft"
 msgstr "Eliminar borrador"
 
@@ -5416,7 +5459,7 @@ msgstr "Pedido del vendedor"
 msgid "New facet"
 msgstr "Nueva faceta"
 
-#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:316
+#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:321
 msgid "Are you sure you want to remove this option group from the product?"
 msgstr "¿Está seguro de que desea eliminar este grupo de opciones del producto?"
 
@@ -5438,7 +5481,7 @@ msgstr "Moneda predeterminada"
 msgid "No payment or refund is required for these changes."
 msgstr "No se requiere pago o reembolso para estos cambios."
 
-#: src/app/routes/_authenticated/_system/components/cancel-jobs-bulk-action.tsx:70
+#: src/app/routes/_authenticated/_system/components/cancel-jobs-bulk-action.tsx:72
 msgid "{cancellableCount, plural, one {Are you sure you want to cancel {cancellableCount} job? This action cannot be undone.} other {Are you sure you want to cancel {cancellableCount} jobs? This action cannot be undone.}}"
 msgstr ""
 
@@ -5499,7 +5542,7 @@ msgstr "Agregar filtros para previsualizar el contenido de la colección."
 msgid "Subtotal"
 msgstr "Subtotal"
 
-#: src/lib/components/data-table/human-readable-operator.tsx:48
+#: src/lib/components/data-table/human-readable-operator.tsx:50
 msgid "is less than"
 msgstr "es menor que"
 
@@ -5507,7 +5550,7 @@ msgstr "es menor que"
 msgid "Refund ID"
 msgstr "ID de Reembolso"
 
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:91
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:93
 msgid "Order custom fields updated"
 msgstr "Campos personalizados del pedido actualizados"
 
@@ -5528,7 +5571,7 @@ msgstr "Ver datos del trabajo"
 msgid "Move to the top level"
 msgstr "Mover al nivel superior"
 
-#: src/lib/components/data-input/product-multi-selector-input.tsx:329
+#: src/lib/components/data-input/product-multi-selector-input.tsx:425
 msgid "Clear"
 msgstr "Limpiar"
 
@@ -5599,7 +5642,7 @@ msgstr "Nuevo Vendedor"
 msgid "Edit image"
 msgstr "Editar imagen"
 
-#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:68
+#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:69
 msgid "Manage Variants"
 msgstr "Gestionar Variantes"
 
@@ -5607,12 +5650,12 @@ msgstr "Gestionar Variantes"
 msgid "Stock allocated"
 msgstr "Stock asignado"
 
-#: src/lib/components/data-table/human-readable-operator.tsx:43
+#: src/lib/components/data-table/human-readable-operator.tsx:45
 msgid "greater than or equal"
 msgstr "mayor o igual que"
 
-#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:394
-#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:412
+#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:420
+#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:438
 msgid "Sets the stock level at which this variant is considered to be out of stock. Using a negative value enables backorder support."
 msgstr "Establece el nivel de stock en el que esta variante se considera agotada. El uso de un valor negativo habilita el soporte de pedidos pendientes."
 
@@ -5658,26 +5701,26 @@ msgstr "Cliente agregado al grupo"
 msgid "Seller orders"
 msgstr "Pedidos del vendedor"
 
-#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:111
+#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:112
 msgid "Failed to add option value"
 msgstr "Error al agregar valor de opción"
 
-#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:140
+#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:141
 msgid "Add option value to {groupName}"
 msgstr "Agregar valor de opción a {groupName}"
 
 #. placeholder {0}: error.message
-#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:221
+#: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx:261
 msgid "Failed to unset shipping address for order: {0}"
 msgstr ""
 
 #: src/app/routes/_authenticated/_orders/components/add-surcharge-form.tsx:82
 #: src/app/routes/_authenticated/_orders/components/edit-order-table.tsx:96
-#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:271
+#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:297
 #: src/app/routes/_authenticated/_products/components/add-product-variant-dialog.tsx:292
-#: src/app/routes/_authenticated/_products/components/assign-facet-values-dialog.tsx:195
-#: src/app/routes/_authenticated/_products/components/generate-variants-panel.tsx:205
-#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:351
+#: src/app/routes/_authenticated/_products/components/assign-facet-values-dialog.tsx:198
+#: src/app/routes/_authenticated/_products/components/generate-variants-panel.tsx:287
+#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:356
 msgid "SKU"
 msgstr "SKU"
 
@@ -5685,7 +5728,7 @@ msgstr "SKU"
 msgid "{totalQuantity} item(s) refunded"
 msgstr "{totalQuantity} artículo(s) reembolsado(s)"
 
-#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:282
+#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:287
 msgid "No option groups defined yet. Add option groups to create different variants of your product (e.g., Size, Color, Material)"
 msgstr "Aún no hay grupos de opciones definidos. Agregue grupos de opciones para crear diferentes variantes de su producto (ej. Tamaño, Color, Material)"
 
@@ -5706,7 +5749,7 @@ msgstr "Disponible:"
 msgid "Created at"
 msgstr "Creado en"
 
-#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:137
+#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:156
 #: src/app/routes/_authenticated/_products/components/add-product-variant-dialog.tsx:165
 msgid "Failed to create product variant"
 msgstr "Error al crear variante de producto"
@@ -5724,7 +5767,7 @@ msgstr "No tiene permiso para ver la configuración de idioma global"
 msgid "Successfully created tax rate"
 msgstr "Tasa de impuesto creada exitosamente"
 
-#: src/lib/components/shared/rich-text-editor/responsive-toolbar.tsx:80
+#: src/lib/components/shared/rich-text-editor/responsive-toolbar.tsx:101
 msgid "Heading 6"
 msgstr "Encabezado 6"
 
@@ -5777,11 +5820,11 @@ msgstr "Filtros activos"
 
 #: src/app/routes/_authenticated/_assets/components/asset-tag-filter.tsx:178
 #: src/lib/components/data-table/data-table-active-filters-popover.tsx:54
-#: src/lib/components/data-table/data-table.tsx:423
+#: src/lib/components/data-table/data-table.tsx:434
 msgid "Clear all"
 msgstr "Limpiar todo"
 
-#: src/lib/components/data-table/human-readable-operator.tsx:40
+#: src/lib/components/data-table/human-readable-operator.tsx:42
 msgid "is greater than"
 msgstr "es mayor que"
 
@@ -5796,7 +5839,7 @@ msgstr "Agregar pago al pedido"
 #: src/app/routes/_authenticated/_assets/components/asset-tag-filter.tsx:122
 #: src/app/routes/_authenticated/_option-groups/components/option-group-products-block.tsx:59
 #: src/app/routes/_authenticated/_products/components/add-option-group-dialog.tsx:245
-#: src/lib/components/data-input/product-multi-selector-input.tsx:83
+#: src/lib/components/data-input/product-multi-selector-input.tsx:154
 #: src/lib/components/data-input/relation-selector.tsx:427
 #: src/lib/components/shared/country-selector.tsx:86
 #: src/lib/components/shared/customer-group-selector.tsx:56
@@ -5809,7 +5852,7 @@ msgstr "Cargando..."
 msgid "The token is used to specify the channel when making API requests."
 msgstr "El token se utiliza para especificar el canal al realizar solicitudes de API."
 
-#: src/app/routes/_authenticated/_orders/components/customer-address-selector.tsx:80
+#: src/app/routes/_authenticated/_orders/components/customer-address-selector.tsx:67
 msgid "No addresses found"
 msgstr "No se encontraron direcciones"
 
@@ -5825,7 +5868,7 @@ msgstr "Selecciona los pagos a reembolsar"
 msgid "Failed to delete {failed} {entityName}"
 msgstr "Error al eliminar {failed} {entityName}"
 
-#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:392
+#: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx:418
 msgid "Out-of-stock threshold"
 msgstr "Umbral de agotamiento"
 
@@ -5856,7 +5899,7 @@ msgstr "El método de pago es requerido"
 msgid "Failed to add customer to group"
 msgstr "Error al agregar cliente al grupo"
 
-#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:275
+#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:280
 #: src/app/routes/_authenticated/_products/products_.$id.tsx:279
 msgid "Manage variants"
 msgstr "Gestionar variantes"
@@ -5882,7 +5925,7 @@ msgstr "Buscar vendedores..."
 msgid "Successfully created promotion"
 msgstr "Promoción creada exitosamente"
 
-#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:292
+#: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx:297
 msgid "Option"
 msgstr "Opción"
 
@@ -5899,7 +5942,7 @@ msgstr "Número de teléfono"
 msgid "Private"
 msgstr "Privado"
 
-#: src/app/routes/_authenticated/_products/components/generate-variants-panel.tsx:201
+#: src/app/routes/_authenticated/_products/components/generate-variants-panel.tsx:283
 msgid "Variant"
 msgstr "Variante"
 
