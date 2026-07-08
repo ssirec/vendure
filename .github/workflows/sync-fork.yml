@@ -10,6 +10,6 @@ jobs:
     steps:
       - uses: wei/github-sync-action@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: `${{ secrets.GITHUB_TOKEN }}
           owner: vendurehq
           repo: vendure
